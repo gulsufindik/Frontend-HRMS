@@ -95,7 +95,7 @@ function LoginFrm({ LoginMethod }) {
         <button type="submit">Giris yap</button>
       </form>
       {notificationStatus && <p>Giris Yapildi</p>}
-      {error !== null && <p>{error}</p> }
+      {error !== null && <p style={{color:"red"}}>{error}</p> }
     </>
   );
 }

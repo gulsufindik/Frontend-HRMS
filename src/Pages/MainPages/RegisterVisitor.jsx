@@ -16,10 +16,6 @@ console.log(visitorForm.username,visitorForm.email,visitorForm.password)
     body:JSON.stringify(visitorForm),
 }
   return fetch (registerVisitorUrl,options).then((resp)=>{
-    if(!resp.ok){
-      throw new Error("Kayit basarisiz")
-    }
-    console.log(resp)
     return resp.json();
   }).then((data)=>{return data}).catch((err)=>console.log(err.message));
   
@@ -55,7 +51,7 @@ function RegisterVisitorFrm({registerVisitorMethod}){
 
   const[visitorForm,setVisitorForm]= useState({username:"",personalEmail:"",password:""})
   const[notificationStatus,setNotificationStatus]=useState(false);
-  const[error,setError]=useState("");
+  const[error,setError]=useState(null);
 
   function handleChange(e){
     setVisitorForm({...visitorForm,[e.target.name]:e.target.value})
@@ -68,9 +64,8 @@ function RegisterVisitorFrm({registerVisitorMethod}){
       if(data.token){
         setNotificationStatus(!notificationStatus);
       }
-      setError(data.fields[0])
+      setError(data.message)
     }).catch((err)=>console.log(err))
-    
   }
 
   return(
@@ -112,7 +107,7 @@ function RegisterVisitorFrm({registerVisitorMethod}){
            {/* {visitorForm.email}{visitorForm.password}{visitorForm.username} */} 
         </form>}
         {notificationStatus && <p>Lutfen paylastiginiz email adresine gelen aktivasyon butonuna tiklayarak hesabinizi aktif ediniz</p>}
-        <p>{error}</p>
+        {error !== null && <p style={{color:"red", marginTop:"10px"}}>{error}</p> }
     </>
   )
 }
