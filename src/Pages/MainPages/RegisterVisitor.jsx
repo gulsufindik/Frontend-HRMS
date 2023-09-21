@@ -117,6 +117,3 @@ function RegisterVisitorFrm({registerVisitorMethod}){
   )
 }
 
-function sa(){
-  console.log("as")
-}
