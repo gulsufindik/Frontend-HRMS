@@ -16,10 +16,6 @@ function registerManagerMethod(managerForm) {
   };
   return fetch(registerManagerUrl, options)
     .then((resp) => {
-      if (!resp.ok) {
-        throw new Error("Kayit basarisiz");
-      }
-      console.log(resp);
       return resp.json();
     })
     .then((data) => {
@@ -60,7 +56,7 @@ function RegisterManagerFrm({ registerManagerMethod }) {
     companyName: "",
   });
   const [notificationStatus, setNotificationStatus] = useState(false);
-
+  const [error,setError] = useState(null)
   function handleChange(e) {
     setManagerForm({ ...managerForm, [e.target.name]: e.target.value });
   }
@@ -73,6 +69,7 @@ function RegisterManagerFrm({ registerManagerMethod }) {
       if(data.token){
         setNotificationStatus(!notificationStatus)
       }
+      setError(data.message)
     }).catch((err)=>console.log(err.message))
   }
 
@@ -133,6 +130,7 @@ function RegisterManagerFrm({ registerManagerMethod }) {
         <button type="submit">Kayit Ol</button>
       </form>
       {notificationStatus && <p>Kayit admin onayina gitmistir. Onaylandigi taktirde bildirim alacaksiniz!</p> }
+      {error !== null && <p style={{color:"red", marginTop:"10px"}}>{error}</p> }
     </>
   );
 }
