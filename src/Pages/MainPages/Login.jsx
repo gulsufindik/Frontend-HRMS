@@ -62,7 +62,12 @@ function LoginFrm({ LoginMethod }) {
         if (data.token) {
           setNotificationStatus(!notificationStatus);
         }
-        setError(data.message);
+        if(data.fields){
+          setError(data.fields)
+        }else{
+          setError(data.message)
+        }
+        console.log(typeof(error))
       })
       .catch((err) => console.log(err));
   }

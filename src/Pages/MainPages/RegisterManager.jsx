@@ -69,7 +69,11 @@ function RegisterManagerFrm({ registerManagerMethod }) {
       if(data.token){
         setNotificationStatus(!notificationStatus)
       }
-      setError(data.message)
+      if(data.fields){
+        setError(data.fields)
+      }else{
+        setError(data.message)
+      }
     }).catch((err)=>console.log(err.message))
   }
 
