@@ -48,7 +48,13 @@ function RegisterVisitorFrm({registerVisitorMethod}){
 
   // const navigate= useNavigate();
 
-  const[visitorForm,setVisitorForm]= useState({username:"",personalEmail:"",password:""})
+  const [visitorForm, setVisitorForm] = useState({
+    name: "",
+    surname: "",
+    username: "",
+    personalEmail: "",
+    password: "",
+  });
   const[notificationStatus,setNotificationStatus]=useState(false);
   const[error,setError]=useState(null);
 
@@ -77,6 +83,25 @@ function RegisterVisitorFrm({registerVisitorMethod}){
     <>
            {!notificationStatus && <form onSubmit={handleRegisterVisitorSubmit}>
           <h2>Kayit Ol</h2>
+
+
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Ad"
+            onChange={handleChange}
+            value={visitorForm.name}
+          />
+
+          <input
+            type="text"
+            name="surname"
+            id="surname"
+            placeholder="Soyad"
+            onChange={handleChange}
+            value={visitorForm.surname}
+          />
 
           <input
             type="text"

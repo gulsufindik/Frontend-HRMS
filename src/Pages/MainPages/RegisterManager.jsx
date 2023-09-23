@@ -49,6 +49,8 @@ export function RegisterManager() {
 // =============Sayfa Componentleri============
 function RegisterManagerFrm({ registerManagerMethod }) {
   const [managerForm, setManagerForm] = useState({
+    name:"",
+    surname:"",
     username: "",
     password: "",
     personalEmail: "",
@@ -81,6 +83,24 @@ function RegisterManagerFrm({ registerManagerMethod }) {
     <>
       <form onSubmit={handleRegisterManagerSubmit}> 
         <h2>Yetkili Kayit</h2>
+
+        <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Ad"
+            onChange={handleChange}
+            value={managerForm.name}
+          />
+
+          <input
+            type="text"
+            name="surname"
+            id="surname"
+            placeholder="Soyad"
+            onChange={handleChange}
+            value={managerForm.surname}
+          />
 
         <input
           type="text"
