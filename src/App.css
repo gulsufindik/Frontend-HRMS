@@ -175,3 +175,52 @@ form>section{
   justify-content: space-between;
   
 }
+
+/* =========================Manager Page Başlangıç=============================== */
+
+.managerPage >main {
+  display: flex;
+}
+
+.managerPage >main > .managerSideBar {
+  border: 2px solid #20DF7F;
+  background-color: #093545;
+  border-radius: 15px;
+  display: flex;
+  width: 250px;
+  height: 90vh;
+  align-items: start;
+  justify-content: start;
+  overflow: hidden;
+
+}
+
+.managerSideBarTitle {
+  
+  display: flex; /* Öğeyi bir flex konteynırı olarak ayarlayın */
+  justify-content: center; /* İçeriği yatay olarak ortala */
+  align-items: center; /* İçeriği dikey olarak ortala */
+  margin-left: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  color: antiquewhite;
+
+}
+
+ .managerSideBarButton{
+  border: 2px solid pink;
+  width: 95%;
+  margin-left: 2%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: none;
+}
+
+.managerViewSection{
+  border: 2px solid pink;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 80vw ;
+  height: 90vh;
+}
