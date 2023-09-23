@@ -7,9 +7,9 @@ import { useState } from "react";
 // ===================Metodlar========================
 const registerVisitorUrl="http://localhost:8080/auth/registervisitor"
 
-// ==========Backend baglanti ==========
+// ==========Backend baglanti ============
 function registerVisitorMethod(visitorForm){
-console.log(visitorForm.username,visitorForm.email,visitorForm.password)
+// console.log(visitorForm.username,visitorForm.email,visitorForm.password)
   const options={
     method:"POST",
     headers: {"Content-Type":"application/json"},
@@ -18,7 +18,6 @@ console.log(visitorForm.username,visitorForm.email,visitorForm.password)
   return fetch (registerVisitorUrl,options).then((resp)=>{
     return resp.json();
   }).then((data)=>{return data}).catch((err)=>console.log(err.message));
-  
 }
 
 // =================Sayfa===============
@@ -71,7 +70,7 @@ function RegisterVisitorFrm({registerVisitorMethod}){
         setError(data.message)
       }
       console.log(typeof(error))
-    }).catch((err)=>console.log(err))
+    }).catch((err)=>console.log(err.message))
   }
 
   return(
