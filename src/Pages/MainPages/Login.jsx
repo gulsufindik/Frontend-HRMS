@@ -1,8 +1,9 @@
 import { LogoLogin } from "../../components/LogoLogin";
 import { KayitOlButton } from "../../components/KayitOlButton";
 
-import { NavLink, json } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 // ===================Metodlar========================
 const LoginUrl = "http://localhost:8080/auth/login";
@@ -47,6 +48,9 @@ export function Login() {
 }
 // =============Sayfa Componentleri============
 function LoginFrm({ LoginMethod }) {
+
+  const navigate=useNavigate();
+
   const [LoginParam, SetLoginParam] = useState({ email: "", password: "" });
   const [notificationStatus, setNotificationStatus] = useState(false);
   const [error,setError]=useState(null);
@@ -61,6 +65,11 @@ function LoginFrm({ LoginMethod }) {
         console.log(data);
         if (data.token) {
           setNotificationStatus(!notificationStatus);
+          localStorage.setItem("token",data.token)
+          localStorage.setItem("userType",data.userType)
+          data.companyName !== null && localStorage.setItem("companyName",data.companyName)
+          
+          localStorage.getItem("userType") === "MANAGER" && navigate("/managerpersonel")
         }
         if(data.fields){
           setError(data.fields)
@@ -93,13 +102,14 @@ function LoginFrm({ LoginMethod }) {
         />
         <section>
           {/* <NavLink to="manager"><p>Yonetici girisi </p></NavLink> */}
-          <NavLink to="resetPw">
+          <NavLink to="forgotpassword">
             <p>Sifremi unuttum</p>
           </NavLink>
         </section>
         <button type="submit">Giris yap</button>
       </form>
       {notificationStatus && <p>Giris Yapildi</p>}
+      
       {error !== null && <p style={{color:"red"}}>{error}</p> }
     </>
   );

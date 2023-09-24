@@ -12,6 +12,7 @@ import { ManagerPageCompanyExpenses } from "./Pages/MainPages/ManagerPageCompany
 import { ManagerPageUpcomingPayment } from "./Pages/MainPages/ManagerPageUpcomigPayments";
 import { ManagerPagePublicHoliday } from "./Pages/MainPages/ManagerPagePublicHoliday";
 import { ManagerPagePersonelTraces } from "./Pages/MainPages/ManagerPagePersonelTraces";
+import { ForgotPassword } from "./Pages/MainPages/ForgotPassword";
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
     <Route path="/managerupcomingpayment" element={<ManagerPageUpcomingPayment />}></Route>
     <Route path="/managerpublicholiday" element={<ManagerPagePublicHoliday />}></Route>
     <Route path="/managerpersoneltraces" element={<ManagerPagePersonelTraces />}></Route>
+    <Route path="/forgotpassword" element={<ForgotPassword />}></Route>
    </Routes>
     
    </>
