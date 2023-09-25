@@ -17,7 +17,6 @@ export function ManagerPagePersonel() {
 
                 </div>
                 <div className="managerViewSection">
-                    <h3>Yönetici:Personel Sayfası</h3>
                     <CalisanTablosu />
                 </div>
             </main>

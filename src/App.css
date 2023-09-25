@@ -230,6 +230,7 @@ form>section {
   justify-content: start;
   width: 80vw;
   height: 90vh;
+  overflow-x: auto;
 }
 
 /* ===========Manager Page Personel Sayfasi Calisan Listesi============== */
@@ -241,7 +242,7 @@ form>section {
 
 .employeeTable th {
   background-color: #f2f2f2;
-  border: 1px solid black;
+  border: 2px solid #20DF7F;
   text-align: left;
   padding: 8px;
 }
@@ -251,11 +252,15 @@ form>section {
 }
 
 .employeeTable td {
-  border: 1px solid black;
+  border: 2px solid #20DF7F;
   text-align: left;
   padding: 8px;
+  white-space: nowrap;
+  overflow: hidden; 
+  text-overflow: ellipsis;
 }
 
 .employeeTable tr:hover {
-  background-color: red;
+  background-color: #093545;
+  color: white;
 }
