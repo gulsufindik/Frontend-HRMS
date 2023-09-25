@@ -23,9 +23,9 @@ export function ManagerPagePersonelTraces(){
         </main>
         </div>
 
-     
-     
-      
+        
+        
+        
         
     )
 
