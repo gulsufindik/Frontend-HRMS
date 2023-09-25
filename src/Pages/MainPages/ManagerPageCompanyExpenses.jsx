@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { LogoLogin } from "../../components/LogoLogin";
 import { ManagerControlButtonlari } from "../../components/ManagerControlButtonlari";
-import SirketGiderleri from "../../components/SirketGiderleri";
+import  SirketGiderleri  from "../../components/SirketGiderleri";
 
 export function ManagerPageCompanyExpenses() {
     return (
