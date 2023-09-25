@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { LogoLogin } from "../../components/LogoLogin";
 import { ManagerControlButtonlari } from "../../components/ManagerControlButtonlari";
-
+import { UpdateCompanyDetails } from "../../components/UpdateCompanyDetails";
 export function ManagerPendingApproval(){
     return(
         <div className="managerPage">
@@ -17,14 +17,11 @@ export function ManagerPendingApproval(){
            
             </div>
             <div className="managerViewSection">
-               <h3>Yönetici Onay Beklyen Personel</h3>
+               {/* <h3>Sirket Bilgilerini Guncelle</h3> */}
+               <UpdateCompanyDetails />
             </div>
         </main>
         </div>
-
-     
-     
-      
         
     )
 
