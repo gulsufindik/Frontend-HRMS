@@ -241,10 +241,11 @@ form>section {
 }
 
 .employeeTable th {
-  background-color: #f2f2f2;
-  border: 2px solid #20DF7F;
+  background-color: #20DF7F;
+  border: 2px solid #093545;
   text-align: left;
   padding: 8px;
+  color: 093545;
 }
 
 .employeeTable tr:nth-child(even) {
@@ -256,7 +257,7 @@ form>section {
   text-align: left;
   padding: 8px;
   white-space: nowrap;
-  overflow: hidden; 
+  overflow: hidden;
   text-overflow: ellipsis;
 }
 
@@ -293,4 +294,37 @@ form>section {
   background-color: #093545;
   color: white;
 
+}
+
+/* ===========Manager Page Sirket Giderleri Tablosu============== */
+.companyExpensesTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.companyExpensesTable th {
+  background-color: #20DF7F;
+  border: 2px solid #093545;
+  text-align: left;
+  padding: 8px;
+  color: 093545;
+}
+
+.companyExpensesTable tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.companyExpensesTable td {
+  border: 2px solid #20DF7F;
+  text-align: left;
+  padding: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.companyExpensesTable tr:hover {
+  background-color: #093545;
+  color: white;
 }

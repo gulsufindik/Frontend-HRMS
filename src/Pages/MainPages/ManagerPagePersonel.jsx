@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import { LogoLogin } from "../../components/LogoLogin";
 import { ManagerControlButtonlari } from "../../components/ManagerControlButtonlari";
 import CalisanTablosu from "../../components/CalisanTablosu";
+
 export function ManagerPagePersonel() {
     return (
         <div className="managerPage">

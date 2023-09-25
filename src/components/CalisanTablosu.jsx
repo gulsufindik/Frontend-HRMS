@@ -29,8 +29,8 @@ class CalisanTablosu extends Component {
                             <th>Id</th>
                             <th>İsim</th>
                             <th>Soyisim</th>
-                            <th>Personel-Mail</th>
-                            <th>Şirket-Mail</th>
+                            <th>Personel Maili</th>
+                            <th>Şirket Maili</th>
                         </tr>
                     </thead>
                     <tbody>
