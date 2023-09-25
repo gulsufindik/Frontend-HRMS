@@ -5,7 +5,7 @@ import { CreateFinancialPerformanceForm } from "../../components/CreateFinancial
 import { SelectedYearFinancialPerformanceTable } from "../../components/ShowSelectedYearFinancial";
 import { useState } from "react";
 export function ManagerPageProfitLoss(){
-    const [selectedComponent, setSelectedComponent] = useState("all");
+    const [selectedComponent, setSelectedComponent] = useState("create");
 
     function showComponent(componentName) {
         setSelectedComponent(componentName);
