@@ -137,7 +137,7 @@ form {
 
 input[type="email"],
 input[type="password"],
-input[type="text"] {
+input[type="text"], input[type="date"] {
   height: 40px;
   padding: 8px 16px;
   width: 300px;
@@ -262,8 +262,38 @@ form>section {
 }
 
 .employeeTable tr:hover {
+  background-color: red;
+}
+
+/* ===========Manager Page Yillik Sirket Kar Zarar Tablosu============== */
+
+.financial-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.financial-table th, .financial-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.financial-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.financial-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.financial-table tbody tr:hover {
+  background-color: #ddd;
+
   background-color: #093545;
   color: white;
+
 }
 
 /* ===========Manager Page Sirket Giderleri Tablosu============== */
