@@ -10,12 +10,8 @@ export function PersonelControlButtonlari(){
         <NavLink to="/personelpagepebreaktime"><button className="personelSideBarButton" >Vardiya ve Mola Saatleri </button></NavLink>
         <NavLink to="/personelpagepecontact"><button className="personelSideBarButton" >Şirket İletişim Bigileri </button></NavLink>
         <NavLink to="/personelpagepublicholiday"><button className="personelSideBarButton" >Resmi Tatiller </button></NavLink>
-        
         </div>
          
        
     );
-       
-    
-
 }
