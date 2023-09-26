@@ -18,16 +18,20 @@ import { PersonelPageCompanyInfo } from "./Pages/MainPages/PersonelPageCompanyIn
 import { PersonelPageCompanyBreakTime } from "./Pages/MainPages/PersonelPageCompanyBreakTime";
 import { PersonelPageCompanyContact } from "./Pages/MainPages/PersonelPageCompanyContact";
 import { PersonelPageCompanyPublicHoliday } from "./Pages/MainPages/PersonelPageCompanyPublicHoliday";
-
+import { AdminCommentApprove } from "./Pages/MainPages/AdminApproveComment";
+import { AdminManagerRegisterApprove } from "./Pages/MainPages/AdminApproveRegisterManager";
 
 function App() {
 
   return (
    <>
    <Routes>
+    {/* herkesin ulasabilecegi sayfalar */}
     <Route path="/" element={<Login />}></Route>
     <Route path="/registerVisitor" element={<RegisterVisitor />}></Route>
     <Route path="/registerManager" element={<RegisterManager />}></Route>
+    <Route path="/forgotpassword" element={<ForgotPassword />}></Route>
+    {/* sadece managerin ulasabilecegi sayfalar */}
     <Route path="/managerpersonel" element={<ManagerPagePersonel />}></Route>
     <Route path="/managerpendingapproval" element={<ManagerPendingApproval />}></Route>
     <Route path="/managerprofitloss" element={<ManagerPageProfitLoss />}></Route>
@@ -35,16 +39,19 @@ function App() {
     <Route path="/managerupcomingpayment" element={<ManagerPageUpcomingPayment />}></Route>
     <Route path="/managerpublicholiday" element={<ManagerPagePublicHoliday />}></Route>
     <Route path="/managerpersoneltraces" element={<ManagerPagePersonelTraces />}></Route>
-    <Route path="/forgotpassword" element={<ForgotPassword />}></Route>
+
+    {/* personel ve manager'in ulasabilecegi sayfalar */}
     <Route path="/personelpagepersonalinformation" element={<PersonelPagePersonalInformation/>} ></Route>
     <Route path="/personelpagepecompanyinfo" element={<PersonelPageCompanyInfo/>} ></Route>
     <Route path="/personelpagepebreaktime" element={<PersonelPageCompanyBreakTime/>} ></Route>
     <Route path="/personelpagepecontact" element={<PersonelPageCompanyContact/>} ></Route>
     <Route path="/personelpagepublicholiday" element={<PersonelPageCompanyPublicHoliday/>} ></Route>
 
-
+    {/* sadece adminin ulasabilecegi sayfa */}
+    <Route path="/admincommentapprove" element={<AdminCommentApprove/>} ></Route>
+    <Route path="/registermanagerapprove" element={<AdminManagerRegisterApprove/>} ></Route>
    </Routes>
-    
+   
    </>
    
   )
