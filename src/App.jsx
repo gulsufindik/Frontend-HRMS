@@ -13,6 +13,11 @@ import { ManagerPageUpcomingPayment } from "./Pages/MainPages/ManagerPageUpcomig
 import { ManagerPagePublicHoliday } from "./Pages/MainPages/ManagerPagePublicHoliday";
 import { ManagerPagePersonelTraces } from "./Pages/MainPages/ManagerPagePersonelTraces";
 import { ForgotPassword } from "./Pages/MainPages/ForgotPassword";
+import { PersonelPagePersonalInformation } from "./Pages/MainPages/PersonelPagePersonalInformation";
+import { PersonelPageCompanyInfo } from "./Pages/MainPages/PersonelPageCompanyInfo";
+import { PersonelPageCompanyBreakTime } from "./Pages/MainPages/PersonelPageCompanyBreakTime";
+import { PersonelPageCompanyContact } from "./Pages/MainPages/PersonelPageCompanyContact";
+import { PersonelPageCompanyPublicHoliday } from "./Pages/MainPages/PersonelPageCompanyPublicHoliday";
 
 
 function App() {
@@ -31,6 +36,13 @@ function App() {
     <Route path="/managerpublicholiday" element={<ManagerPagePublicHoliday />}></Route>
     <Route path="/managerpersoneltraces" element={<ManagerPagePersonelTraces />}></Route>
     <Route path="/forgotpassword" element={<ForgotPassword />}></Route>
+    <Route path="/personelpagepersonalinformation" element={<PersonelPagePersonalInformation/>} ></Route>
+    <Route path="/personelpagepecompanyinfo" element={<PersonelPageCompanyInfo/>} ></Route>
+    <Route path="/personelpagepebreaktime" element={<PersonelPageCompanyBreakTime/>} ></Route>
+    <Route path="/personelpagepecontact" element={<PersonelPageCompanyContact/>} ></Route>
+    <Route path="/personelpagepublicholiday" element={<PersonelPageCompanyPublicHoliday/>} ></Route>
+
+
    </Routes>
     
    </>
