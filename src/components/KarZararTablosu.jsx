@@ -25,7 +25,7 @@ export function FinancialPerformanceTable(){
                 if(Array.isArray(data)){
                     setListAllYears(data);
                 }else{
- if(data.fields){
+                if(data.fields){
                     setError(data.fields)
                   }else{
                     setError(data.message)

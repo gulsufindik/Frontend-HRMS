@@ -70,6 +70,7 @@ function LoginFrm({ LoginMethod }) {
           data.companyName !== null && localStorage.setItem("companyName",data.companyName)
           
           localStorage.getItem("userType") === "MANAGER" && navigate("/managerpersonel")
+          localStorage.getItem("userType") === "ADMIN" && navigate("/admincommentapprove")
         }
         if(data.fields){
           setError(data.fields)
