@@ -274,6 +274,14 @@ form>section {
   margin-top: 20px;
 }
 
+.financial-table td {
+  text-align: center; 
+}
+
+.financial-table td button {
+  vertical-align: middle; 
+}
+
 .financial-table th, .financial-table td {
   border: 1px solid #ddd;
   padding: 8px;
@@ -470,4 +478,19 @@ margin-bottom: 5px;
   display: flex; 
   flex-direction: column;
 }
+
+/* ===================== Onay Red Butonlari ================= */
+
+.btn-approve{
+  width: 40px;
+  height: 30px;
+}
+.btn-deny{
+  width: 40px;
+  height: 30px;
+  background-color: red;
+}
+
+
+
 
