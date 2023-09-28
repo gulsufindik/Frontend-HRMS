@@ -9,10 +9,10 @@ export function ManagerPageCompanyExpenses() {
         <div className="managerPage">
 
             <header>
-            <nav >
-            <LogoLogin/>
-            <Logout />
-          </nav>
+                <nav >
+                    <LogoLogin />
+                    <Logout />
+                </nav>
             </header>
 
             <main>
