@@ -516,3 +516,55 @@ margin-bottom: 5px;
   color: #ddd;
   
 }
+/*======================Personal Page==========================*/
+
+.visitorPage>main {
+  display: flex;
+}
+
+.visitorPage>main>.visitorSideBar {
+  border: 2px solid #20DF7F;
+  background-color: #093545;
+  border-radius: 15px;
+  display: flex;
+  width: 250px;
+  height: 90vh;
+  align-items: start;
+  justify-content: start;
+  overflow: hidden;
+
+}
+
+.visitorSideBarTitle {
+
+  display: flex;
+  /* Öğeyi bir flex konteynırı olarak ayarlayın */
+  justify-content: center;
+  /* İçeriği yatay olarak ortala */
+  align-items: center;
+  /* İçeriği dikey olarak ortala */
+  margin-left: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  color: antiquewhite;
+
+}
+
+.visitorSideBarButton {
+  border: 2px solid pink;
+  width: 95%;
+  margin-left: 2%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: none;
+}
+
+.visitorViewSection {
+  border: 2px solid pink;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 80vw;
+  height: 90vh;
+  overflow-x: auto;
+}
