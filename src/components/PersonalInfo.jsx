@@ -1,41 +1,24 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+const employeeInfoUrl= `http://localhost:8080/user/employeeinfo?token=${localStorage.getItem("token")}`
 
-function getPersonelInfo() {
-    return axios.get(`http://localhost:8080/user/personelinfo?token=${localStorage.getItem("token")}`).then((response) => {
-        return response.json()
-    }).then((data) => {
-
-        return data
-    }).catch((err) => {
-        console.log(err.message)
-    });
-}
 console.log(localStorage.getItem("token"))
 function fetchPersonelInfo() {
-    return fetch(`http://localhost:8080/user/personelinfo?token=${localStorage.getItem("token")}`)
-        .then((resp) => {
+    return fetch(employeeInfoUrl).then((resp) => {
             return resp.json();
         })
         .then((data) => {
+            console.log(data);
             return data;
         })
         .catch((err) => console.log(err.message));
 }
 
 export function PersonalInfo() {
-    const [personalInfo, setPersonalInfo] = useState(null);
-    // useEffect(() => {
-    //     getPersonelInfo().then((data) => {
-    //         console.log(data)
-    //         setPersonalInfo(data)
-    //     }).catch((err) => {
-    //         console.log(err.message)
-    //     });
-    // }, []);
+    const [personalInfo, setPersonalInfo] = useState("");
+
     useEffect(() => {
         fetchPersonelInfo().then((data) => {
-            console.log(data)
+            console.log(data);
             setPersonalInfo(data)
         }).catch((err) => {
             console.log(err.message)
@@ -44,8 +27,8 @@ export function PersonalInfo() {
     return (
         <div className="personelInfoPage">
             <h1>Personel Kisisel Bilgiler</h1>
-            <ul> {personalInfo.id &&
-                <li key={personalInfo.id}>
+            <ul> 
+                <li >Isim: {personalInfo.name}
                     <h4>İsim Soyisim</h4>
                     {personalInfo.name} {personalInfo.surname}
                     <br />
@@ -64,8 +47,7 @@ export function PersonalInfo() {
                     <h4>Sirket Ismi</h4>
                     {personalInfo.name} {personalInfo.surname}
                     <br />
-                </li>}
-
+                </li>
             </ul>
         </div>
     );
