@@ -1,5 +1,7 @@
 import { LogoLogin } from "../../components/LogoLogin";
 import { PersonelControlButtonlari } from "../../components/PersonelControlButtonlari ";
+import PersonalKisiselBilgiler from "../../components/PersonelKisiselBilgiler";
+
 export function PersonelPagePersonalInformation(){
     return(
       <div className="personelPage">
@@ -14,7 +16,7 @@ export function PersonelPagePersonalInformation(){
             </div>
 
             <div className="personelViewSection">
-                <h3>Personel:Kişisel Bilgiler</h3>
+                <PersonalKisiselBilgiler/>
             </div>
         </main>
         
