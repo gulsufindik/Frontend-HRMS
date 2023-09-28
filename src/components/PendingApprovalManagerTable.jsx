@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 //==================== URL ===============================
 const pendingApprovalListManagerUrl= "http://localhost:8080/user/listpendingmanagerapproval"
 const pendingApprovalManagerUrl = "http://localhost:8080/user/approvemanager"
-
+const denyRegisterManagerUrl = "http://localhost:8080/user/denymanager"
 //==================== Backend Fetch ===============================
 // =========== listeleme metodu ==============
 function pendingApprovalManagerMethod(){
@@ -24,6 +24,18 @@ function fetchApprovalManagerMethod(approvedManager){
       }).then((data)=>{return data}).catch((err)=>console.log(err.message))
 }
 
+// ============= Red Metodu ==================
+function fetchDenyManagerMethod(deniedManager){
+    const options = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(deniedManager),
+      };
+      return fetch(denyRegisterManagerUrl,options).then((resp)=>{
+        return resp.json();
+      }).then((data)=>{return data}).catch((err)=>console.log(err.message))
+}
+
 
 // ======================= Table ================
 export function PendingApprovalManagerTable(){
@@ -38,6 +50,19 @@ export function PendingApprovalManagerTable(){
     })
     const[approveError,setApproveError]=useState(null);
     const [approvedMessage,setApprovedMessage] = useState(null);
+
+    // Red icin gerekli Hooklar
+    const[deniedManager,setDeniedManager] = useState({
+        userType: localStorage.getItem("userType"),
+        authId: null,
+    })
+
+    // Listeyi Yenileme Icin Gerekli Metod
+    function removeManagerFromList(authId) {
+        // Yorumu listeden kaldır
+        const updatedManagerList = pendingManagerList.filter(manager => manager.id !== authId);
+        setPendingManagerList(updatedManagerList);
+      }
 
     // Listeleme metodu
     useEffect(()=>{
@@ -58,6 +83,7 @@ export function PendingApprovalManagerTable(){
     function handleApproveClick(AuthIdOfManager){
         console.log(AuthIdOfManager);
         setApprovedManager({ token: localStorage.getItem("token"), managerAuthId: AuthIdOfManager });
+        removeManagerFromList(AuthIdOfManager)
     }
     
     useEffect(() => {
@@ -78,6 +104,31 @@ export function PendingApprovalManagerTable(){
                 .catch((err) => console.log(err.message));
         }
     }, [approvedManager]);
+
+    // Red Metodu
+    function handleDenyClick(AuthIdOfManager){
+        console.log(AuthIdOfManager);
+        setDeniedManager({ userType: localStorage.getItem("userType"), authId: AuthIdOfManager });
+        removeManagerFromList(AuthIdOfManager)
+    }
+
+    useEffect(() => {
+        if (deniedManager.authId !== null) {
+            console.log(deniedManager);
+            fetchDenyManagerMethod(deniedManager)
+                .then((data) => {
+                    if (data) {
+                        setApprovedMessage("Başarılı");
+                    }
+                    if (data.fields) {
+                        setApproveError(data.fields);
+                    } else {
+                        setApproveError(data.message);
+                    }
+                })
+                .catch((err) => console.log(err.message));
+        }
+    }, [deniedManager]);
 
     return(
         <>
@@ -114,7 +165,7 @@ export function PendingApprovalManagerTable(){
                                 <td>{manager.personalEmail}</td>
                                 <td>{manager.companyName}</td>
                                 <td>{manager.userType}</td>
-                                <td><button className="btn-approve" onClick={()=>handleApproveClick(manager.authid)}>✔️</button><button className="btn-deny">🗙</button></td>
+                                <td><button className="btn-approve" onClick={()=>handleApproveClick(manager.authid)}>✔️</button><button onClick={()=>handleDenyClick(manager.authid)} className="btn-deny" >🗙</button></td>
                             </tr>
                         ))
                     )}

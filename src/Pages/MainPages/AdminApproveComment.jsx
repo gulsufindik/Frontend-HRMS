@@ -19,8 +19,6 @@ export function AdminCommentApprove(){
                 <PendingCommentTable />
             </div>
         </main>
-        
-
       </div>
     )
 }

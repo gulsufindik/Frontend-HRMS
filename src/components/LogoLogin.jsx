@@ -3,6 +3,6 @@ export function LogoLogin(){
 
 
     return(
-        <NavLink to="login" className="logoLogin" ><img src="../../public/images/YoncaLogo.png" alt="" /></NavLink>
+        <NavLink  className="logoLogin" ><img src="../../public/images/YoncaLogo.png" alt="" /></NavLink>
     )
 }
