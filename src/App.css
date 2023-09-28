@@ -96,6 +96,8 @@ main>div {
   padding: 16px;
 }
 
+
+
 .logoLogin img {
   /* border: 2px solid black; */
   margin-top: 5px;
@@ -182,6 +184,12 @@ form>section {
 }
 
 /* =========================Manager Page Başlangıç=============================== */
+
+.managerPage>header>nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .managerPage>main {
   display: flex;
@@ -368,6 +376,12 @@ margin-bottom: 5px;
 
 /*=====================Personal Page Başlanıcı=================*/
 
+.personelPage>header>nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .personelPage>main {
   display: flex;
 }
@@ -457,6 +471,12 @@ margin-bottom: 5px;
 
 
 /*=====================Admin Page Başlanıcı=================*/
+
+.adminPage>header>nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .adminPage>main {
   display: flex;
@@ -552,7 +572,12 @@ margin-bottom: 5px;
   color: #ddd;
   
 }
-/*======================Personal Page==========================*/
+/*======================Visitor Page==========================*/
+.visitorPage>header>nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .visitorPage>main {
   display: flex;

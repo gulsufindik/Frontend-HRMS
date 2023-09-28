@@ -1,11 +1,15 @@
 import { LogoLogin } from "../../components/LogoLogin";
 import { VisitorControlButtonlari } from "../../components/VisitorControlButtonlari";
+import { Logout } from "../../components/LogoutButton";
 export function VisitorPageCompanyContact(){
     return(
       <div className="visitorPage">
 
         <header>
+        <nav >
             <LogoLogin/>
+            <Logout />
+          </nav>
         </header>
         <main className="main">
             <div className="visitorSideBar">
