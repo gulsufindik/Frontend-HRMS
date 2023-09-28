@@ -71,7 +71,7 @@ function RegisterVisitorFrm({registerVisitorMethod}){
       }
 
       if(data.fields){
-        setError(data.fields)
+        setError(data.fields[0])
       }else{
         setError(data.message)
       }
@@ -84,7 +84,7 @@ function RegisterVisitorFrm({registerVisitorMethod}){
            {!notificationStatus && <form onSubmit={handleRegisterVisitorSubmit}>
           <h2>Kayit Ol</h2>
 
-
+          
           <input
             type="text"
             name="name"

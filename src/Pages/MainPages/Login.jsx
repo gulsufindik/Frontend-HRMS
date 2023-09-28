@@ -74,7 +74,7 @@ function LoginFrm({ LoginMethod }) {
           localStorage.getItem("userType") === "EMPLOYEE" && navigate("/personelpagepersonalinformation")
         }
         if(data.fields){
-          setError(data.fields)
+          setError(data.fields[0])
         }else{
           setError(data.message)
         }
