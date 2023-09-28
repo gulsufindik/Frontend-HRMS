@@ -1,12 +1,16 @@
 import { LogoLogin } from "../../components/LogoLogin";
-import { PersonelControlButtonlari } from "../../components/PersonelControlButtonlari ";
+// import { PersonelControlButtonlari } from "../../components/PersonelControlButtonlari ";
 import { VisitorControlButtonlari } from "../../components/VisitorControlButtonlari";
+import { Logout } from "../../components/LogoutButton";
 export function VisitorPagePersonalInfo(){
     return(
       <div className="visitorPage">
 
         <header>
+        <nav >
             <LogoLogin/>
+            <Logout />
+          </nav>
         </header>
         <main className="main">
             <div className="visitorSideBar">

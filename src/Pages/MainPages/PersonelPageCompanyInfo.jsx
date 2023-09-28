@@ -1,11 +1,15 @@
 import { LogoLogin } from "../../components/LogoLogin";
 import { PersonelControlButtonlari } from "../../components/PersonelControlButtonlari ";
+import { Logout } from "../../components/LogoutButton";
 export function PersonelPageCompanyInfo(){
     return(
       <div className="personelPage">
 
         <header>
+        <nav >
             <LogoLogin/>
+            <Logout />
+          </nav>
         </header>
         <main className="main">
             <div className="personelSideBar">
