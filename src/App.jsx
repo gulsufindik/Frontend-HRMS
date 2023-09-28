@@ -52,7 +52,7 @@ function App() {
     {/* sadece adminin ulasabilecegi sayfa */}
     <Route path="/admincommentapprove" element={<AdminCommentApprove/>} ></Route>
     <Route path="/registermanagerapprove" element={<AdminManagerRegisterApprove/>} ></Route>
-
+    
     <Route path="/visitorpagepersonelinfo" element={<VisitorPagePersonalInfo/>} ></Route>
     <Route path="/visitorpagepecontact" element={<VisitorPageCompanyContact/>} ></Route>
    </Routes>
