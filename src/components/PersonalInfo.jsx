@@ -16,6 +16,7 @@ function fetchPersonelInfo() {
 export function PersonalInfo() {
     const [personalInfo, setPersonalInfo] = useState("");
 
+    
     useEffect(() => {
         fetchPersonelInfo().then((data) => {
             console.log(data);
