@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { LogoLogin } from "../../components/LogoLogin";
 import { ManagerControlButtonlari } from "../../components/ManagerControlButtonlari";
-import CalisanTablosu from "../../components/CalisanTablosu";
+import { AllPersonalTable } from "../../components/CalisanTablosu";
 
 export function ManagerPagePersonel() {
     return (
@@ -18,7 +18,7 @@ export function ManagerPagePersonel() {
 
                 </div>
                 <div className="managerViewSection">
-                    <CalisanTablosu />
+                    <AllPersonalTable />
                 </div>
             </main>
         </div>
