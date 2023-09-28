@@ -1,53 +1,80 @@
-import { Component } from "react";
+import { useState, useEffect } from "react"
 
-class CalisanTablosu extends Component {
-    constructor() {
-        super();
-        this.state = {
-            employees: [],
-        };
-    }
+function fetchPersonalTable() {
+    return fetch(`http://localhost:8080/user/listworkers?companyName=${localStorage.getItem("companyName")}`)
+        .then((resp) => {
+            return resp.json();
+        })
+        .then((data) => {
+            return data;
+        })
+        .catch((err) => console.log(err.message));
+}
 
-    componentDidMount() {
-        fetch(`http://localhost:8080/user/listworkers?companyName=${localStorage.getItem("companyName")}`)
-            .then((response) => response.json())
-            .then((data) => {
-                this.setState({ employees: data });
+
+
+
+export function AllPersonalTable() {
+
+    const [listAllYears, setListAllYears] = useState([]);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        fetchPersonalTable()
+            .then(data => {
+                if (Array.isArray(data)) {
+                    setListAllYears(data);
+                } else {
+                    if (data.fields) {
+                        setError(data.fields)
+                    } else {
+                        setError(data.message)
+                    }
+                }
+
+
             })
-            .catch((error) => {
-                console.error("Error fetching data:", error);
-            });
-    }
+            .catch(error => console.log(error.message));
+    }, []);
 
-    render() {
-        return (
-            <div>
-                <h1>Calisan Listesi</h1>
-                <table className="employeeTable">
+    return (
+        <>
+            {error && <p style={{ color: "red", marginTop: "20px" }}>Henuz Sirkete ait bir veri bulunamadi</p>}
+            {!error && <div>
+                <h1>Çalışan Tablosu</h1>
+                <table className="employeeTable" >
                     <thead>
                         <tr>
-                            <th>Id</th>
-                            <th>İsim</th>
-                            <th>Soyisim</th>
+                            <th>ID</th>
+                            <th>İsim Soyisim</th>
+                            <th>Kullanıcı Adı</th>
                             <th>Personel Maili</th>
                             <th>Şirket Maili</th>
+                            <th>Çalısan Tipi</th>
+                            <th>Şirket İsmi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {this.state.employees.map((employee) => (
-                            <tr key={employee.id}>
-                                <td>{employee.id}</td>
-                                <td>{employee.name}</td>
-                                <td>{employee.surname}</td>
-                                <td>{employee.personalEmail}</td>
-                                <td>{employee.companyEmail}</td>
+                        {listAllYears.length === 0 ? (
+                            <tr>
+                                <td colSpan="6">Henuz veri yukleniyor...</td>
                             </tr>
-                        ))}
+                        ) : (
+                            listAllYears.map(item => (
+                                <tr key={item.id}>
+                                    <td>{item.id}</td>
+                                    <td>{item.name} {item.surname}</td>
+                                    <td>{item.username}</td>
+                                    <td>{item.personalEmail}</td>
+                                    <td>{item.companyEmail}</td>
+                                    <td>{item.userType}</td>
+                                    <td>{item.companyName}</td>
+                                </tr>
+                            ))
+                        )}
                     </tbody>
                 </table>
-            </div>
-        );
-    }
+            </div>}
+        </>
+    )
 }
-
-export default CalisanTablosu;
