@@ -3,6 +3,8 @@ import { LogoLogin } from "../../components/LogoLogin";
 import { ManagerControlButtonlari } from "../../components/ManagerControlButtonlari";
 import { UpdateCompanyDetails } from "../../components/UpdateCompanyDetails";
 import { Logout } from "../../components/LogoutButton";
+import { SwitchButtonToEmployee } from "../../components/SwitchManagerToEmployeeButton";
+
 export function ManagerPendingApproval(){
     return(
         <div className="managerPage">
@@ -10,6 +12,7 @@ export function ManagerPendingApproval(){
          <header>
          <nav >
             <LogoLogin/>
+            <SwitchButtonToEmployee />
             <Logout />
           </nav>
         </header>

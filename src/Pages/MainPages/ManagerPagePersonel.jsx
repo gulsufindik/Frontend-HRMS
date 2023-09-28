@@ -3,6 +3,7 @@ import { LogoLogin } from "../../components/LogoLogin";
 import { ManagerControlButtonlari } from "../../components/ManagerControlButtonlari";
 import { AllPersonalTable } from "../../components/CalisanTablosu";
 import { Logout } from "../../components/LogoutButton";
+import { SwitchButtonToEmployee } from "../../components/SwitchManagerToEmployeeButton";
 
 export function ManagerPagePersonel() {
     return (
@@ -11,6 +12,7 @@ export function ManagerPagePersonel() {
             <header>
                 <nav >
                     <LogoLogin />
+                    <SwitchButtonToEmployee />
                     <Logout />
                 </nav>
             </header>

@@ -2,6 +2,7 @@ import { LogoLogin } from "../../components/LogoLogin";
 import { PersonelControlButtonlari } from "../../components/PersonelControlButtonlari ";
 import { Logout } from "../../components/LogoutButton";
 import { useState, useEffect } from 'react';
+import { SwitchButtonToManager } from "../../components/SwitchEmployeeToManagerButton";
 
 
 const ManagerPagePublicHolidayUrl = "http://localhost:8080/company/publicholiday";
@@ -17,12 +18,15 @@ function publicHolidayData() {
 }
 
 export function PersonelPageCompanyPublicHoliday() {
+  const userType = localStorage.getItem("userType");
+
   return (
     <div className="personelPage">
 
       <header>
         <nav >
           <LogoLogin />
+          {userType === "MANAGER" && <SwitchButtonToManager/>}
           <Logout />
         </nav>
       </header>

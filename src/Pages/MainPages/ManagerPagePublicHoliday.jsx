@@ -3,6 +3,7 @@ import { LogoLogin } from "../../components/LogoLogin";
 import { ManagerControlButtonlari } from "../../components/ManagerControlButtonlari";
 import { useState, useEffect } from 'react';
 import { Logout } from "../../components/LogoutButton";
+import { SwitchButtonToEmployee } from "../../components/SwitchManagerToEmployeeButton";
 
 //===========Backend Bağlantısı========
 const ManagerPagePublicHolidayUrl = "http://localhost:8080/company/publicholiday";
@@ -25,6 +26,7 @@ export function ManagerPagePublicHoliday(){
          <header>
          <nav >
             <LogoLogin/>
+            <SwitchButtonToEmployee />
             <Logout />
           </nav>
         </header>
