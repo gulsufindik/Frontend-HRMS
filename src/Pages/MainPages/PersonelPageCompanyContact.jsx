@@ -1,15 +1,21 @@
 import { LogoLogin } from "../../components/LogoLogin";
 import { PersonelControlButtonlari } from "../../components/PersonelControlButtonlari ";
 import { Logout } from "../../components/LogoutButton";
-export function PersonelPageCompanyContact(){
-    return(
-      <div className="personelPage">
+import { SwitchButtonToManager } from "../../components/SwitchEmployeeToManagerButton";
 
-        <header>
+
+export function PersonelPageCompanyContact(){
+  const userType = localStorage.getItem("userType");
+
+  return (
+    <div className="personelPage">
+
+      <header>
         <nav >
-            <LogoLogin/>
-            <Logout />
-          </nav>
+          <LogoLogin />
+          {userType === "MANAGER" && <SwitchButtonToManager/>}
+          <Logout />
+        </nav>
         </header>
         <main className="main">
             <div className="personelSideBar">

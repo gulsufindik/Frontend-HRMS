@@ -5,6 +5,8 @@ import { CreateFinancialPerformanceForm } from "../../components/CreateFinancial
 import { SelectedYearFinancialPerformanceTable } from "../../components/ShowSelectedYearFinancial";
 import { useState } from "react";
 import { Logout } from "../../components/LogoutButton";
+import { SwitchButtonToEmployee } from "../../components/SwitchManagerToEmployeeButton";
+
 export function ManagerPageProfitLoss(){
     const [selectedComponent, setSelectedComponent] = useState("create");
 
@@ -17,6 +19,7 @@ export function ManagerPageProfitLoss(){
          <header>
          <nav >
             <LogoLogin/>
+            <SwitchButtonToEmployee />
             <Logout />
           </nav>
         </header>

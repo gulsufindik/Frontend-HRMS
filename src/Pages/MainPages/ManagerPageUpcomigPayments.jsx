@@ -2,6 +2,8 @@ import { NavLink } from "react-router-dom";
 import { LogoLogin } from "../../components/LogoLogin";
 import { ManagerControlButtonlari } from "../../components/ManagerControlButtonlari";
 import { Logout } from "../../components/LogoutButton";
+import { SwitchButtonToEmployee } from "../../components/SwitchManagerToEmployeeButton";
+
 export function ManagerPageUpcomingPayment(){
     return(
         <div className="managerPage">
@@ -9,6 +11,7 @@ export function ManagerPageUpcomingPayment(){
          <header>
          <nav >
             <LogoLogin/>
+            <SwitchButtonToEmployee />
             <Logout />
           </nav>
         </header>
