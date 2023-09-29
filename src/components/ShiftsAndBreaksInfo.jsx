@@ -14,40 +14,66 @@ function fetchShiftsAndBreaksInfo() {
 }
 
 export function ShiftsAndBreaksInfo() {
-    const [shiftInfo, setShiftInfo] = useState("");
 
+    const [listShiftInfo, setListShiftInfo] = useState([]);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetchShiftsAndBreaksInfo().then((data) => {
-            console.log(data);
-            setShiftInfo(data)
-        }).catch((err) => {
-            console.log(err.message)
-        });
+        fetchShiftsAndBreaksInfo()
+            .then(data => {
+                if (Array.isArray(data)) {
+                    setListShiftInfo(data);
+                } else {
+                    if (data.fields) {
+                        setError(data.fields)
+                    } else {
+                        setError(data.message)
+                    }
+                }
+
+
+            })
+            .catch(error => console.log(error.message));
     }, []);
+
     return (
-        <div className="personelInfoPage">
-            <h1>Mola ve Vardiya Saatleri</h1>
-            <ul>
-                <li>
-                    <div>
-                        <h4>Sirket Ismi</h4>
-                        <p>{shiftInfo.companyName}</p>
-                    </div>
-                    <div>
-                        <h4>Vardiya</h4>
-                        <p>{shiftInfo.shiftTypes}</p>
-                    </div>
-                    <div>
-                        <h4>Vardiya Baslangic - Bitis</h4>
-                        <p>{shiftInfo.shiftStartsAt} - {shiftInfo.shiftEndsAt}</p>
-                    </div>
-                    <div>
-                        <h4>Mola Baslangic - Bitis</h4>
-                        <p>{shiftInfo.breakStartsAt} - {shiftInfo.breakEndsAt}</p>
-                    </div>
-                </li>
-            </ul>
-        </div>
+        <>
+            {error && <p style={{ color: "red", marginTop: "20px" }}>Henuz Sirkete ait bir veri bulunamadi</p>}
+            {!error && <div>
+                <div className="personelInfoPage">
+                    <h1>Mola ve Vardiya Saatleri</h1>
+                    <ul>
+                        <li>
+                            {listShiftInfo.length === 0 ? (
+                                <tr>
+                                    <td colSpan="6">Henuz veri yukleniyor...</td>
+                                </tr>
+                            ) : (
+                                listShiftInfo.map(item => (
+                                    <tr key={item.id}>
+                                        <div>
+                                            <h4>Sirket Ismi</h4>
+                                            <p>{item.companyName}</p>
+                                        </div>
+                                        <div>
+                                            <h4>Vardiya</h4>
+                                            <p>{item.shiftTypes}</p>
+                                        </div>
+                                        <div>
+                                            <h4>Vardiya Baslangic - Bitis</h4>
+                                            <p>{item.shiftStartsAt} - {item.shiftEndsAt}</p>
+                                        </div>
+                                        <div>
+                                            <h4>Mola Baslangic - Bitis</h4>
+                                            <p>{item.breakStartsAt} - {item.breakEndsAt}</p>
+                                        </div>
+                                    </tr>
+                                ))
+                            )}
+                        </li>
+                    </ul>
+                </div>
+            </div>}
+        </>
     );
 }

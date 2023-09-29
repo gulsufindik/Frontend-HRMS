@@ -56,7 +56,7 @@ export function PersonalInfo() {
                     </div>
                     <div>
                         <h4>Şirket Adı</h4>
-                        <p>{personalInfo.name} {personalInfo.surname}</p>
+                        <p>{personalInfo.companyName}</p>
                     </div>
                 </li>
             </ul>
