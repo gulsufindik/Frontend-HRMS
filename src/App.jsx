@@ -23,6 +23,7 @@ import { AdminManagerRegisterApprove } from "./Pages/MainPages/AdminApproveRegis
 import { VisitorPagePersonalInfo } from "./Pages/MainPages/VisitorPagePersonalInfo";
 import { VisitorPageCompanyContact } from "./Pages/MainPages/VisitorPageCompanyContact";
 import { ManagerRegisterEmployee } from "./Pages/MainPages/ManagerRegisterEmployee";
+import { EmployeeCommentToCompany } from "./Pages/MainPages/PersonelCommentToCompany";
 
 function App() {
 
@@ -51,6 +52,7 @@ function App() {
     <Route path="/personelpagepebreaktime" element={<PersonelPageCompanyBreakTime/>} ></Route>
     <Route path="/personelpagepecontact" element={<PersonelPageCompanyContact/>} ></Route>
     <Route path="/personelpagepublicholiday" element={<PersonelPageCompanyPublicHoliday/>} ></Route>
+    <Route path="/personelleaveacomment" element={<EmployeeCommentToCompany/>} ></Route>
 
     {/* sadece adminin ulasabilecegi sayfa */}
     <Route path="/admincommentapprove" element={<AdminCommentApprove/>} ></Route>
