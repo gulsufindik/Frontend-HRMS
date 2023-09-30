@@ -153,7 +153,7 @@ function RegisterManagerFrm({ registerManagerMethod }) {
         </section>
         <button type="submit">Kayit Ol</button>
       </form>
-      {notificationStatus && <p>Kayit admin onayina gitmistir. Onaylandigi taktirde bildirim alacaksiniz!</p> }
+      {notificationStatus && <p style={{marginTop:"10px"}}>Kayit admin onayina gitmistir. Onaylandigi taktirde bildirim alacaksiniz!</p> }
       {error !== null && <p style={{color:"red", marginTop:"10px"}}>{error}</p> }
     </>
   );
