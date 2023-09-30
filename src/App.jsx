@@ -22,6 +22,7 @@ import { AdminCommentApprove } from "./Pages/MainPages/AdminApproveComment";
 import { AdminManagerRegisterApprove } from "./Pages/MainPages/AdminApproveRegisterManager";
 import { VisitorPagePersonalInfo } from "./Pages/MainPages/VisitorPagePersonalInfo";
 import { VisitorPageCompanyContact } from "./Pages/MainPages/VisitorPageCompanyContact";
+import { ManagerRegisterEmployee } from "./Pages/MainPages/ManagerRegisterEmployee";
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
     <Route path="/registerVisitor" element={<RegisterVisitor />}></Route>
     <Route path="/registerManager" element={<RegisterManager />}></Route>
     <Route path="/forgotpassword" element={<ForgotPassword />}></Route>
+
     {/* sadece managerin ulasabilecegi sayfalar */}
     <Route path="/managerpersonel" element={<ManagerPagePersonel />}></Route>
     <Route path="/managerpendingapproval" element={<ManagerPendingApproval />}></Route>
@@ -41,6 +43,7 @@ function App() {
     <Route path="/managerupcomingpayment" element={<ManagerPageUpcomingPayment />}></Route>
     <Route path="/managerpublicholiday" element={<ManagerPagePublicHoliday />}></Route>
     <Route path="/managerpersoneltraces" element={<ManagerPagePersonelTraces />}></Route>
+    <Route path="/managerregisteremployee" element={<ManagerRegisterEmployee />}></Route>
 
     {/* personel ve manager'in ulasabilecegi sayfalar */}
     <Route path="/personelpagepersonalinformation" element={<PersonelPagePersonalInformation/>} ></Route>
