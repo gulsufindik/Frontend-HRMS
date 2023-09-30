@@ -16,7 +16,7 @@ body {
 }
 
 a {
-  text-decoration: none;
+  /* text-decoration: none; */
 }
 
 h1 {
@@ -183,7 +183,7 @@ form>section {
   /* border: 2px solid black; */
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
 
 }
 
