@@ -11,7 +11,7 @@ import { ManagerPageProfitLoss } from "./Pages/MainPages/ManagerPageProfitLoss";
 import { ManagerPageCompanyExpenses } from "./Pages/MainPages/ManagerPageCompanyExpenses";
 import { ManagerPageUpcomingPayment } from "./Pages/MainPages/ManagerPageUpcomigPayments";
 import { ManagerPagePublicHoliday } from "./Pages/MainPages/ManagerPagePublicHoliday";
-import { ManagerPagePersonelTraces } from "./Pages/MainPages/ManagerPagePersonelTraces";
+import { ManagerPagePersonelTraces } from "./Pages/MainPages/ManagerPageListPersonelDayOffs";
 import { ForgotPassword } from "./Pages/MainPages/ForgotPassword";
 import { PersonelPagePersonalInformation } from "./Pages/MainPages/PersonelPagePersonalInformation";
 import { PersonelPageCompanyInfo } from "./Pages/MainPages/PersonelPageCompanyInfo";
@@ -24,6 +24,7 @@ import { VisitorPagePersonalInfo } from "./Pages/MainPages/VisitorPagePersonalIn
 import { VisitorPageCompanyContact } from "./Pages/MainPages/VisitorPageCompanyContact";
 import { ManagerRegisterEmployee } from "./Pages/MainPages/ManagerRegisterEmployee";
 import { EmployeeCommentToCompany } from "./Pages/MainPages/PersonelCommentToCompany";
+import { ManagerCreateEmployeeDayOff } from "./Pages/MainPages/ManagerCreateEmployeeDayOff";
 
 function App() {
 
@@ -45,6 +46,7 @@ function App() {
     <Route path="/managerpublicholiday" element={<ManagerPagePublicHoliday />}></Route>
     <Route path="/managerpersoneltraces" element={<ManagerPagePersonelTraces />}></Route>
     <Route path="/managerregisteremployee" element={<ManagerRegisterEmployee />}></Route>
+    <Route path="/managercreateemployeedayoff" element={<ManagerCreateEmployeeDayOff />}></Route>
 
     {/* personel ve manager'in ulasabilecegi sayfalar */}
     <Route path="/personelpagepersonalinformation" element={<PersonelPagePersonalInformation/>} ></Route>

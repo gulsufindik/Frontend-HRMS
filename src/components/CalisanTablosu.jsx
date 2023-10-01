@@ -46,6 +46,7 @@ export function AllPersonalTable() {
                     <thead>
                         <tr>
                             <th>ID</th>
+                            <th>AuthId</th>
                             <th>İsim Soyisim</th>
                             <th>Kullanıcı Adı</th>
                             <th>Personel Maili</th>
@@ -63,6 +64,7 @@ export function AllPersonalTable() {
                             listAllYears.map(item => (
                                 <tr key={item.id}>
                                     <td>{item.id}</td>
+                                    <td>{item.authid}</td>
                                     <td>{item.name} {item.surname}</td>
                                     <td>{item.username}</td>
                                     <td>{item.personalEmail}</td>
