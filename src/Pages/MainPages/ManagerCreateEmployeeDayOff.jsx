@@ -1,33 +1,35 @@
 import { LogoLogin } from "../../components/LogoLogin";
-import { ManagerControlButtonlari } from "../../components/ManagerControlButtonlari";
+import { PersonelControlButtonlari } from "../../components/PersonelControlButtonlari ";
 import { Logout } from "../../components/LogoutButton";
-import { SwitchButtonToEmployee } from "../../components/SwitchManagerToEmployeeButton";
+import { SwitchButtonToManager } from "../../components/SwitchEmployeeToManagerButton";
 import { CreateDayOffForm } from "../../components/ManagerCreateEmployeeForm";
 
-export function ManagerCreateEmployeeDayOff(){
-    return(
-        <div className="managerPage">
+export function PersonelPageCreateDayOffRequest(){
+  const userType = localStorage.getItem("userType");
 
-         <header>
-         <nav >
-            <LogoLogin/>
-            <SwitchButtonToEmployee />
-            <Logout />
-          </nav>
+  return (
+    <div className="personelPage">
+
+      <header>
+        <nav >
+          <LogoLogin />
+          {userType === "MANAGER" && <SwitchButtonToManager/>}
+          <Logout />
+        </nav>
         </header>
-
-        <main>
-            <div className="managerSideBar">
-            <h4 className="managerSideBarTitle">Yönetici Araç Çubuğu</h4>
-            <ManagerControlButtonlari/>
+        <main className="main">
+            <div className="personelSideBar">
+             <h4 className="personelSideBarTitle" >Personel Araç Çubuğu</h4>  
+             <PersonelControlButtonlari/> 
             </div>
-            <div className="managerViewSection">
-               <h3>Yönetici:Personel Izni Olustur</h3>
-               <CreateDayOffForm />
+
+            <div className="personelViewSection">
+                <h3>Personel:Şirket İletişim Bilgileri</h3>
+                <CreateDayOffForm />
             </div>
         </main>
-        </div> 
         
-    )
 
+      </div>
+    )
 }

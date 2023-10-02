@@ -25,7 +25,7 @@ function createDayOffMethod(dayOffData) {
 
 export function CreateDayOffForm() {
   const [dayOffData, setDayOffData] = useState({
-    authid: "",
+    token: localStorage.getItem("token"),
     userType: localStorage.getItem("userType"),
     companyName: localStorage.getItem("companyName"),
     typeOfPermit: "",
@@ -64,16 +64,7 @@ export function CreateDayOffForm() {
   return (
     <>
       <form onSubmit={handleCreateDayOffSubmit}>
-        <h2>Izin Ekle</h2>
-
-        <input
-          type="number"
-          name="authid"
-          id="authid"
-          placeholder="Authid giriniz"
-          onChange={handleChange}
-          value={dayOffData.authid}
-        />
+        <h2>Izin Istegi Olustur</h2>
 
         <select
           name="typeOfPermit"

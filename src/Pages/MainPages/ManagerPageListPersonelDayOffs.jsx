@@ -3,7 +3,7 @@ import { LogoLogin } from "../../components/LogoLogin";
 import { ManagerControlButtonlari } from "../../components/ManagerControlButtonlari";
 import { Logout } from "../../components/LogoutButton";
 import { SwitchButtonToEmployee } from "../../components/SwitchManagerToEmployeeButton";
-import { EmployeeDaysOffTable } from "../../components/ListEmployeeDaysOff";
+import { EmployeeDaysOffTable } from "../../components/PendingEmployeeDaysOffRequests";
 
 export function ManagerPagePersonelTraces(){
     return(
@@ -24,7 +24,6 @@ export function ManagerPagePersonelTraces(){
            
             </div>
             <div className="managerViewSection">
-               <h3>Yönetici:Personel İzinleri</h3>
                <EmployeeDaysOffTable />
             </div>
         </main>
