@@ -119,6 +119,7 @@ function FindAllCompany(){
 
   const handleClick = (value) => {
     navigateTo(`/companypage?value=${value}`);
+    {localStorage.setItem("gotoCompanyId", value.toString())}
   };
 
   useEffect(() => {
@@ -180,9 +181,9 @@ function FindWithName(){
             {databaseData.companyName && (
         <div className="databaseCompany">
           <h1>{databaseData.companyName}</h1>
-          <hr></hr>
-          <p>{databaseData.about}</p>
+                   <p>{databaseData.about}</p>
           <NavLink to="/companypage"> <button className="goCompany">Şirkete Git</button></NavLink>
+          {localStorage.setItem("gotoCompanyId", databaseData.id.toString())}
         </div>
       )}
            
@@ -190,3 +191,4 @@ function FindWithName(){
           </div>
   );
 }
+
