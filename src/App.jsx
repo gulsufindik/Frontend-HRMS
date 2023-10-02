@@ -28,7 +28,7 @@ import { CompanyPage } from "./components/CompanyPage";
 
 import { ManagerRegisterEmployee } from "./Pages/MainPages/ManagerRegisterEmployee";
 import { EmployeeCommentToCompany } from "./Pages/MainPages/PersonelCommentToCompany";
-import { ManagerCreateEmployeeDayOff } from "./Pages/MainPages/ManagerCreateEmployeeDayOff";
+import { PersonelPageCreateDayOffRequest } from "./Pages/MainPages/ManagerCreateEmployeeDayOff";
 
 
 function App() {
@@ -51,7 +51,7 @@ function App() {
     <Route path="/managerpublicholiday" element={<ManagerPagePublicHoliday />}></Route>
     <Route path="/managerpersoneltraces" element={<ManagerPagePersonelTraces />}></Route>
     <Route path="/managerregisteremployee" element={<ManagerRegisterEmployee />}></Route>
-    <Route path="/managercreateemployeedayoff" element={<ManagerCreateEmployeeDayOff />}></Route>
+    
 
     {/* personel ve manager'in ulasabilecegi sayfalar */}
     <Route path="/personelpagepersonalinformation" element={<PersonelPagePersonalInformation/>} ></Route>
@@ -60,6 +60,7 @@ function App() {
     <Route path="/personelpagepecontact" element={<PersonelPageCompanyContact/>} ></Route>
     <Route path="/personelpagepublicholiday" element={<PersonelPageCompanyPublicHoliday/>} ></Route>
     <Route path="/personelleaveacomment" element={<EmployeeCommentToCompany/>} ></Route>
+    <Route path="/employeerequestdayoff" element={<PersonelPageCreateDayOffRequest />}></Route>
 
     {/* sadece adminin ulasabilecegi sayfa */}
     <Route path="/admincommentapprove" element={<AdminCommentApprove/>} ></Route>

@@ -12,11 +12,8 @@ export function ManagerControlButtonlari(){
         <NavLink to="/managercompanyexpenses"><button className="managerSideBarButton" >Şirket Giderleri </button></NavLink>
         <NavLink to="/managerupcomingpayment"><button className="managerSideBarButton" >Yaklaşan Ödemeler </button></NavLink>
         <NavLink to="/managerpublicholiday"><button className="managerSideBarButton" >Resmi Tatiller </button></NavLink>
-        <NavLink to="/managercreateemployeedayoff"><button className="managerSideBarButton" >Personel Izin Olustur +</button></NavLink>
-        <NavLink to="/managerpersoneltraces"><button className="managerSideBarButton" >Personel İzinleri </button></NavLink>
+        <NavLink to="/managerpersoneltraces"><button className="managerSideBarButton" >Bekleyen Personel İzin Istekleri</button></NavLink>
         </div>
-         
-       
     );
        
         
