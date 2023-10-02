@@ -72,7 +72,7 @@ function LoginFrm({ LoginMethod }) {
           localStorage.getItem("userType") === "MANAGER" && navigate("/managerpersonel")
           localStorage.getItem("userType") === "ADMIN" && navigate("/admincommentapprove")
           localStorage.getItem("userType") === "EMPLOYEE" && navigate("/personelpagepersonalinformation")
-          localStorage.getItem("userType") === "VISITOR" && navigate("/visitorpagepersonelinfo")
+          localStorage.getItem("userType") === "VISITOR" && navigate("/mainpage")
           
         }
         if(data.fields){
