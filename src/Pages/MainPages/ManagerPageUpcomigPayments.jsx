@@ -67,9 +67,6 @@ export function ManagerPageUpcomingPayment() {
 function Table() {
   const [upcomingPaymentData, setUpcomingPaymentData] = useState([]);
   const [error, setError] = useState(null);
-=======
-        
-    )
 
 
   useEffect(() => {
@@ -143,34 +140,4 @@ function Table() {
   );
 }
 
-        </tr>
-        <tr className="tableROW">
-            <td className="td">Su</td>
-            <td className="td">1000 TL</td>
-            <td className="td">2023-09-28</td>
-        <td className="td"><button className="tdbtn">Ödendi Yap</button></td>
-        </tr>
-        <tr className="tableROW">
-            <td className="td">Elektrik</td>
-            <td className="td">750 TL</td>
-            <td className="td">2023-09-29</td>
-            <td className="td"><button className="tdbtn">Ödendi Yap</button></td>
-        </tr>
-        <tr className="tableROW">
-            <td className="td">Maaş</td>
-            <td className="td">1200 TL</td>
-            <td className="td">2023-09-30</td>
-            <td className="td"><button className="tdbtn">Ödendi Yap</button></td>
-        </tr>
-        
-    </table>
-</body>
-
-</>
-
-
-
-
-    )
-}
 
