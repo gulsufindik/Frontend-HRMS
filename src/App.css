@@ -528,17 +528,22 @@ margin-bottom: 5px;
 }
 
 /*====================Yaklaşan Ödemler=========================*/
-
+.tablo{
+  margin-top:50px;
+}
 .tableROW{
   border:2px solid #093545;
   margin-right: 10px;
   background-color: #20DF7F;
+  margin-top: px;
 }
 
 .th{
   border:5px solid #093545;
   padding: 10px;
-  background-color: #45bfeb;
+  background-color: #1483ab;
+  color: #ddd;
+  font-style: italic;
   
 
 }
@@ -546,11 +551,30 @@ margin-bottom: 5px;
   border:2px solid #093545;
   padding: 10px;
 }
-.td >button{
+.tdbtn{
   background-color: rgb(248, 40, 40);
   width: auto;
   color: #ddd;
+  box-shadow: none;
+  margin: 5px;
   
+}
+.tdbtn:hover{
+  background-color: green;
+}
+
+.companentContainer{
+  display: flex;
+}
+.inputContainer{
+  display: flex;
+  flex-direction: column;
+  margin-right: 30px;
+  padding-top: 100px;
+}
+
+.btnCompanyQuery{
+  margin-top: 10px;
 }
 /*======================Personal Page==========================*/
 
@@ -603,4 +627,274 @@ margin-bottom: 5px;
   width: 80vw;
   height: 90vh;
   overflow-x: auto;
+}
+
+/*=====main page=====================*/
+
+.mainPageContainer >header{
+  border: 2px solid pink;
+  height: 13vh;
+  min-height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #093545;
+  padding: 30px;
+}
+
+.loginMainbtn{
+  width: 100px;
+  box-shadow: none;
+  border: darkblue;
+  border: 3px solid rgb(167, 106, 26);
+  font-size: 20px;
+}
+
+
+.mainPageContainer >main{
+
+  height: 90vh;
+  min-height: 200px;
+}
+.abotUsContainer{
+  height: 100%;
+  width: 100%;
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+.aboutİnfo{
+  height: 100%;
+  width: 50%;
+
+  padding: 30px;
+  background-color: #379e17;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #ddd;
+  font-size: 20px;
+}
+.aboutİnfo:hover{
+  width: 100vw;
+  font-size: 30px;
+
+
+}
+.aboutTitle{
+
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+
+
+.aboutView{
+
+  height: 100%;
+  width: 50%;
+}
+
+.resim1{
+  height: 100%;
+  width: 100%;
+}
+
+.companySectionMainPage{
+
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+
+}
+
+
+
+.companyview{
+  height: 100%;
+  width: 50%;
+ 
+}
+.resim2{
+  height: 100%;
+  width: 100%;
+}
+
+
+
+.findCompany{
+  height: 100%;
+  width: 50%;
+  
+  display: flex;
+  background-color: rgb(235, 17, 54);
+  flex-direction: column;
+  align-items: center;
+}
+
+.findCompany:hover{
+  height: 100%;
+  width: 100%;
+ 
+  display: flex;
+  background-color: rgb(235, 17, 54);
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.findCompanyInput{
+  background-color: #1483ab;
+  border: 6px solid #093545;
+  border-radius: 30px;
+  width: 300px;
+  height: 40px;
+  margin-top: 50px;
+  color: #ddd;
+  font-size: 20px;
+ padding-left: 15px;
+}
+
+.findCompanyInput::placeholder{
+  color: #ddd;
+}
+.findCompanyInput:hover{
+  color: #ddd;
+  width:90%;
+  transition: width 0.5s ease-in-out, height 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+.findCompanybtn{
+  margin-top: 10px;
+  color: #ddd;
+  font-size: 20px;
+  box-shadow: none;
+
+}
+
+.findCompanybtn1{
+  margin-top: 10px;
+  color: #ddd;
+  font-size: 20px;
+  box-shadow: none;
+  
+}
+
+.findCompanybtn2{
+  margin-top: 10px;
+  color: #ddd;
+  font-size: 20px;
+  box-shadow: none;
+  width: 200px;
+  
+}
+
+.findCompanybtn3{
+  margin-top: 10px;
+  color: #ddd;
+  font-size: 20px;
+  box-shadow: none;
+  width: 100px;
+  
+}
+
+.findCompanybtn2:hover{
+  font-size: 20px;
+  background-color: orangered;
+  transition: width 0.5s ease-in-out, height 0.5s ease-in-out, background-color 0.5s ease-in-out;
+  width: 90%;
+  
+  font-weight: bold;
+}
+
+.allCompanySectionMainPage{
+ 
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+
+}
+.companylist{
+  height: 100%;
+  width: 50%;
+ 
+  background-color: blue;
+  display: flex;
+  flex-direction: column;
+}
+
+.companylist:hover{
+  width: 100%;
+  border: 1px solid red;
+  background-color: blue;
+  padding: 20px;
+  transition: width 0.5s ease-in-out, height 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+.btnCompanyContainer{
+  display: flex;
+  flex-direction: column;
+}
+
+.btnCompanyName{
+  margin-top: 15px;
+  color: bisque;
+  font-size: 28px;
+  box-shadow: none;
+  width: 350px;
+  background-color: orange;
+  font-weight: bold;
+  margin-left: 5px;
+  display: flex;
+  padding-left: 40px;
+
+}
+
+.btnCompanyName:hover{
+ 
+  width: 70%;
+  background-color: orangered;
+  transition: width 0.5s ease-in-out, height 0.5s ease-in-out, background-color 0.5s ease-in-out;
+
+}
+
+.companylist > h1{
+  color: rgb(236, 5, 236);
+  align-items: center;
+  font-weight: bolder;
+  margin-left: 15px;
+  margin-top: 30px;
+}
+
+.goCompany{
+  margin-top: 10px;
+  color: #ddd;
+  font-size: 20px;
+  box-shadow: none;
+  width: 200px;
+}
+.databaseCompany{
+  border: 4px solid #093545;
+  margin-top: 30px;
+  width: 300px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1483ab;
+  padding: 10px;
+}
+
+.goCompany:hover{
+  font-size: 20px;
+  background-color: orangered;
+  transition: width 0.5s ease-in-out, height 0.5s ease-in-out, background-color 0.5s ease-in-out;
+  font-weight: bold;
+}
+
+.databaseCompany>h1{
+  color: #ddd;
 }
