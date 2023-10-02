@@ -1,11 +1,10 @@
-import { NavLink } from "react-router-dom";
 import { LogoLogin } from "../../components/LogoLogin";
 import { ManagerControlButtonlari } from "../../components/ManagerControlButtonlari";
-import { UpdateCompanyDetails } from "../../components/UpdateCompanyDetails";
 import { Logout } from "../../components/LogoutButton";
 import { SwitchButtonToEmployee } from "../../components/SwitchManagerToEmployeeButton";
+import { CreateDayOffForm } from "../../components/ManagerCreateEmployeeForm";
 
-export function ManagerPendingApproval(){
+export function ManagerCreateEmployeeDayOff(){
     return(
         <div className="managerPage">
 
@@ -21,14 +20,13 @@ export function ManagerPendingApproval(){
             <div className="managerSideBar">
             <h4 className="managerSideBarTitle">Yönetici Araç Çubuğu</h4>
             <ManagerControlButtonlari/>
-           
             </div>
             <div className="managerViewSection">
-               {/* <h3>Sirket Bilgilerini Guncelle</h3> */}
-               <UpdateCompanyDetails />
+               <h3>Yönetici:Personel Izni Olustur</h3>
+               <CreateDayOffForm />
             </div>
         </main>
-        </div>
+        </div> 
         
     )
 

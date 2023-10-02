@@ -1,24 +1,34 @@
 import { LogoLogin } from "../../components/LogoLogin";
 import { PersonelControlButtonlari } from "../../components/PersonelControlButtonlari ";
-export function PersonelPageCompanyInfo(){
-    return(
-      <div className="personelPage">
+import { Logout } from "../../components/LogoutButton";
+import { CompanyInfo } from "../../components/CompanyInfo";
+import { SwitchButtonToManager } from "../../components/SwitchEmployeeToManagerButton";
 
-        <header>
-            <LogoLogin/>
-        </header>
-        <main className="main">
-            <div className="personelSideBar">
-             <h4 className="personelSideBarTitle" >Personel Araç Çubuğu</h4>  
-             <PersonelControlButtonlari/> 
-            </div>
+export function PersonelPageCompanyInfo() {
+  const userType = localStorage.getItem("userType");
 
-            <div className="personelViewSection">
-                <h3>Personel:Şirket Bilgileri</h3>
-            </div>
-        </main>
-        
+  return (
+    <div className="personelPage">
 
-      </div>
-    )
+      <header>
+        <nav >
+          <LogoLogin />
+          {userType === "MANAGER" && <SwitchButtonToManager/>}
+          <Logout />
+        </nav>
+      </header>
+      <main className="main">
+        <div className="personelSideBar">
+          <h4 className="personelSideBarTitle" >Personel Araç Çubuğu</h4>
+          <PersonelControlButtonlari />
+        </div>
+
+        <div className="personelViewSection">
+          <CompanyInfo />
+        </div>
+      </main>
+
+
+    </div>
+  )
 }

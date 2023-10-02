@@ -1,14 +1,20 @@
 import { NavLink } from "react-router-dom";
 import { LogoLogin } from "../../components/LogoLogin";
 import { ManagerControlButtonlari } from "../../components/ManagerControlButtonlari";
-import CalisanTablosu from "../../components/CalisanTablosu";
+import { AllPersonalTable } from "../../components/CalisanTablosu";
+import { Logout } from "../../components/LogoutButton";
+import { SwitchButtonToEmployee } from "../../components/SwitchManagerToEmployeeButton";
 
 export function ManagerPagePersonel() {
     return (
         <div className="managerPage">
 
             <header>
-                <LogoLogin />
+                <nav >
+                    <LogoLogin />
+                    <SwitchButtonToEmployee />
+                    <Logout />
+                </nav>
             </header>
 
             <main>
@@ -18,7 +24,7 @@ export function ManagerPagePersonel() {
 
                 </div>
                 <div className="managerViewSection">
-                    <CalisanTablosu />
+                    <AllPersonalTable />
                 </div>
             </main>
         </div>

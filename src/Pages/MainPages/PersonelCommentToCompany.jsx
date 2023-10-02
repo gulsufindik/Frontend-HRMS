@@ -2,9 +2,9 @@ import { LogoLogin } from "../../components/LogoLogin";
 import { PersonelControlButtonlari } from "../../components/PersonelControlButtonlari ";
 import { Logout } from "../../components/LogoutButton";
 import { SwitchButtonToManager } from "../../components/SwitchEmployeeToManagerButton";
+import { LeaveAComment } from "../../components/PersonelLeaveAComment";
 
-
-export function PersonelPageCompanyContact(){
+export function EmployeeCommentToCompany(){
   const userType = localStorage.getItem("userType");
 
   return (
@@ -24,7 +24,8 @@ export function PersonelPageCompanyContact(){
             </div>
 
             <div className="personelViewSection">
-                <h3>Personel:Şirket İletişim Bilgileri</h3>
+                <h3>Personel:Şirket Hakkinda Yorum Birak</h3>
+                <LeaveAComment />
             </div>
         </main>
         

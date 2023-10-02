@@ -1,24 +1,36 @@
 import { LogoLogin } from "../../components/LogoLogin";
 import { PersonelControlButtonlari } from "../../components/PersonelControlButtonlari ";
-export function PersonelPageCompanyBreakTime(){
-    return(
-      <div className="personelPage">
+import { Logout } from "../../components/LogoutButton";
+import { ShiftsAndBreaksInfo } from "../../components/ShiftsAndBreaksInfo";
+import { SwitchButtonToManager } from "../../components/SwitchEmployeeToManagerButton";
 
-        <header>
-            <LogoLogin/>
-        </header>
-        <main className="main">
-            <div className="personelSideBar">
-             <h4 className="personelSideBarTitle" >Personel Araç Çubuğu</h4>  
-             <PersonelControlButtonlari/> 
-            </div>
 
-            <div className="personelViewSection">
-                <h3>Personel:Mola Ve Vardiya Saatleri</h3>
-            </div>
-        </main>
-        
+export function PersonelPageCompanyBreakTime() {
+  
+  const userType = localStorage.getItem("userType");
 
-      </div>
-    )
+  return (
+    <div className="personelPage">
+
+      <header>
+        <nav >
+          <LogoLogin />
+          {userType === "MANAGER" && <SwitchButtonToManager/>}
+          <Logout />
+        </nav>
+      </header>
+      <main className="main">
+        <div className="personelSideBar">
+          <h4 className="personelSideBarTitle" >Personel Araç Çubuğu</h4>
+          <PersonelControlButtonlari />
+        </div>
+
+        <div className="personelViewSection">
+          <ShiftsAndBreaksInfo />
+        </div>
+      </main>
+
+
+    </div>
+  )
 }

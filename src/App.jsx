@@ -11,7 +11,7 @@ import { ManagerPageProfitLoss } from "./Pages/MainPages/ManagerPageProfitLoss";
 import { ManagerPageCompanyExpenses } from "./Pages/MainPages/ManagerPageCompanyExpenses";
 import { ManagerPageUpcomingPayment } from "./Pages/MainPages/ManagerPageUpcomigPayments";
 import { ManagerPagePublicHoliday } from "./Pages/MainPages/ManagerPagePublicHoliday";
-import { ManagerPagePersonelTraces } from "./Pages/MainPages/ManagerPagePersonelTraces";
+import { ManagerPagePersonelTraces } from "./Pages/MainPages/ManagerPageListPersonelDayOffs";
 import { ForgotPassword } from "./Pages/MainPages/ForgotPassword";
 import { PersonelPagePersonalInformation } from "./Pages/MainPages/PersonelPagePersonalInformation";
 import { PersonelPageCompanyInfo } from "./Pages/MainPages/PersonelPageCompanyInfo";
@@ -22,8 +22,14 @@ import { AdminCommentApprove } from "./Pages/MainPages/AdminApproveComment";
 import { AdminManagerRegisterApprove } from "./Pages/MainPages/AdminApproveRegisterManager";
 import { VisitorPagePersonalInfo } from "./Pages/MainPages/VisitorPagePersonalInfo";
 import { VisitorPageCompanyContact } from "./Pages/MainPages/VisitorPageCompanyContact";
+
 import { MainPage } from "./Pages/MainPages/MainPage";
 import { CompanyPage } from "./components/CompanyPage";
+
+import { ManagerRegisterEmployee } from "./Pages/MainPages/ManagerRegisterEmployee";
+import { EmployeeCommentToCompany } from "./Pages/MainPages/PersonelCommentToCompany";
+import { ManagerCreateEmployeeDayOff } from "./Pages/MainPages/ManagerCreateEmployeeDayOff";
+
 
 function App() {
 
@@ -35,6 +41,7 @@ function App() {
     <Route path="/registerVisitor" element={<RegisterVisitor />}></Route>
     <Route path="/registerManager" element={<RegisterManager />}></Route>
     <Route path="/forgotpassword" element={<ForgotPassword />}></Route>
+
     {/* sadece managerin ulasabilecegi sayfalar */}
     <Route path="/managerpersonel" element={<ManagerPagePersonel />}></Route>
     <Route path="/managerpendingapproval" element={<ManagerPendingApproval />}></Route>
@@ -43,6 +50,8 @@ function App() {
     <Route path="/managerupcomingpayment" element={<ManagerPageUpcomingPayment />}></Route>
     <Route path="/managerpublicholiday" element={<ManagerPagePublicHoliday />}></Route>
     <Route path="/managerpersoneltraces" element={<ManagerPagePersonelTraces />}></Route>
+    <Route path="/managerregisteremployee" element={<ManagerRegisterEmployee />}></Route>
+    <Route path="/managercreateemployeedayoff" element={<ManagerCreateEmployeeDayOff />}></Route>
 
     {/* personel ve manager'in ulasabilecegi sayfalar */}
     <Route path="/personelpagepersonalinformation" element={<PersonelPagePersonalInformation/>} ></Route>
@@ -50,11 +59,12 @@ function App() {
     <Route path="/personelpagepebreaktime" element={<PersonelPageCompanyBreakTime/>} ></Route>
     <Route path="/personelpagepecontact" element={<PersonelPageCompanyContact/>} ></Route>
     <Route path="/personelpagepublicholiday" element={<PersonelPageCompanyPublicHoliday/>} ></Route>
+    <Route path="/personelleaveacomment" element={<EmployeeCommentToCompany/>} ></Route>
 
     {/* sadece adminin ulasabilecegi sayfa */}
     <Route path="/admincommentapprove" element={<AdminCommentApprove/>} ></Route>
     <Route path="/registermanagerapprove" element={<AdminManagerRegisterApprove/>} ></Route>
-
+    
     <Route path="/visitorpagepersonelinfo" element={<VisitorPagePersonalInfo/>} ></Route>
     <Route path="/visitorpagepecontact" element={<VisitorPageCompanyContact/>} ></Route>
 

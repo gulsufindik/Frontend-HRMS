@@ -1,14 +1,20 @@
 import { NavLink } from "react-router-dom";
 import { LogoLogin } from "../../components/LogoLogin";
 import { ManagerControlButtonlari } from "../../components/ManagerControlButtonlari";
-
+import { Logout } from "../../components/LogoutButton";
+import { SwitchButtonToEmployee } from "../../components/SwitchManagerToEmployeeButton";
+import { EmployeeDaysOffTable } from "../../components/ListEmployeeDaysOff";
 
 export function ManagerPagePersonelTraces(){
     return(
         <div className="managerPage">
 
          <header>
-        <LogoLogin/>
+         <nav >
+            <LogoLogin/>
+            <SwitchButtonToEmployee />
+            <Logout />
+          </nav>
         </header>
 
         <main>
@@ -19,13 +25,10 @@ export function ManagerPagePersonelTraces(){
             </div>
             <div className="managerViewSection">
                <h3>Yönetici:Personel İzinleri</h3>
+               <EmployeeDaysOffTable />
             </div>
         </main>
-        </div>
-
-        
-        
-        
+        </div> 
         
     )
 

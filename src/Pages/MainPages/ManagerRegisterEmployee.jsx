@@ -1,11 +1,10 @@
-import { NavLink } from "react-router-dom";
 import { LogoLogin } from "../../components/LogoLogin";
 import { ManagerControlButtonlari } from "../../components/ManagerControlButtonlari";
-import { UpdateCompanyDetails } from "../../components/UpdateCompanyDetails";
 import { Logout } from "../../components/LogoutButton";
 import { SwitchButtonToEmployee } from "../../components/SwitchManagerToEmployeeButton";
+import { RegisterEmployeeFrm } from "../../components/RegisterEmployeeForm";
 
-export function ManagerPendingApproval(){
+export function ManagerRegisterEmployee(){
     return(
         <div className="managerPage">
 
@@ -24,12 +23,11 @@ export function ManagerPendingApproval(){
            
             </div>
             <div className="managerViewSection">
-               {/* <h3>Sirket Bilgilerini Guncelle</h3> */}
-               <UpdateCompanyDetails />
+               <h3>Yönetici:Personel Ekle</h3>
+               <RegisterEmployeeFrm />
             </div>
         </main>
         </div>
-        
     )
 
 }

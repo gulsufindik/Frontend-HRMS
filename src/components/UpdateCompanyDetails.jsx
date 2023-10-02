@@ -40,15 +40,9 @@ export function UpdateCompanyDetails() {
     const [isCompanyNameEditable, setIsCompanyNameEditable] = useState(false);
     const [loading, setLoading] = useState(true);
   
+
     useEffect(() => {
-      setCompanyDetailsData({
-        id: "",
-        companyName: "",
-        taxNo: "",
-        numOfEmployees: "",
-        about: "",
-      });
-  
+      console.log("Burdayiz")
       findByCompanyNameMethod()
         .then((data) => {
           if (data.companyName) {
@@ -59,6 +53,7 @@ export function UpdateCompanyDetails() {
               numOfEmployees: data.numOfEmployees.toString(),
               about: data.about,
             });
+            console.log(companyDetailsData);
           }
           setLoading(false);
         })
@@ -72,7 +67,7 @@ export function UpdateCompanyDetails() {
   
     function handleCompanyDetailsDataSubmit(e) {
       e.preventDefault();
-  
+      console.log(companyDetailsData)
       updateCompanyDetailsMethod(companyDetailsData)
         .then((data) => {
           if (data) {

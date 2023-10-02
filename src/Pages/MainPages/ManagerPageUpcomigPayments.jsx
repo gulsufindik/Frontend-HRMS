@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { LogoLogin } from "../../components/LogoLogin";
 import { ManagerControlButtonlari } from "../../components/ManagerControlButtonlari";
+import { Logout } from "../../components/LogoutButton";
+import { SwitchButtonToEmployee } from "../../components/SwitchManagerToEmployeeButton";
 
 function PaymentContactApiMethod() {
   const url = `http://localhost:8080/upcoming/findallwithcompanyname?companyName=${localStorage.getItem("companyName")}`;
@@ -8,6 +10,7 @@ function PaymentContactApiMethod() {
     method: "GET",
     headers: { "Content-Type": "application/json" },
   };
+
 
   return fetch(url, options)
     .then((resp) => {
@@ -29,6 +32,15 @@ function PaymentContactApiMethod() {
     });
 }
 
+         <header>
+         <nav >
+            <LogoLogin/>
+            <SwitchButtonToEmployee />
+            <Logout />
+          </nav>
+        </header>
+
+
 export function ManagerPageUpcomingPayment() {
   return (
     <div className="managerPage">
@@ -46,6 +58,7 @@ export function ManagerPageUpcomingPayment() {
             <Table />
           </div>
         </div>
+
       </main>
     </div>
   );
@@ -54,6 +67,10 @@ export function ManagerPageUpcomingPayment() {
 function Table() {
   const [upcomingPaymentData, setUpcomingPaymentData] = useState([]);
   const [error, setError] = useState(null);
+=======
+        
+    )
+
 
   useEffect(() => {
     PaymentContactApiMethod()
@@ -106,6 +123,7 @@ function Table() {
             <th className="th">Ödeme Miktarı</th>
             <th className="th">Ödeme Tarihi</th>
             <th className="th">Kontrol</th>
+
           </tr>
         </thead>
         <tbody>
@@ -124,3 +142,35 @@ function Table() {
     </div>
   );
 }
+
+        </tr>
+        <tr className="tableROW">
+            <td className="td">Su</td>
+            <td className="td">1000 TL</td>
+            <td className="td">2023-09-28</td>
+        <td className="td"><button className="tdbtn">Ödendi Yap</button></td>
+        </tr>
+        <tr className="tableROW">
+            <td className="td">Elektrik</td>
+            <td className="td">750 TL</td>
+            <td className="td">2023-09-29</td>
+            <td className="td"><button className="tdbtn">Ödendi Yap</button></td>
+        </tr>
+        <tr className="tableROW">
+            <td className="td">Maaş</td>
+            <td className="td">1200 TL</td>
+            <td className="td">2023-09-30</td>
+            <td className="td"><button className="tdbtn">Ödendi Yap</button></td>
+        </tr>
+        
+    </table>
+</body>
+
+</>
+
+
+
+
+    )
+}
+

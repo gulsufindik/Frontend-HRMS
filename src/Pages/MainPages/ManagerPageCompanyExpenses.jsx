@@ -1,14 +1,20 @@
 import { NavLink } from "react-router-dom";
 import { LogoLogin } from "../../components/LogoLogin";
 import { ManagerControlButtonlari } from "../../components/ManagerControlButtonlari";
-import  SirketGiderleri  from "../../components/SirketGiderleri";
+import { CompanyExpensesTable } from "../../components/SirketGiderleri";
+import { Logout } from "../../components/LogoutButton";
+import { SwitchButtonToEmployee } from "../../components/SwitchManagerToEmployeeButton";
 
 export function ManagerPageCompanyExpenses() {
     return (
         <div className="managerPage">
 
             <header>
-                <LogoLogin />
+                <nav >
+                    <LogoLogin />
+                    <SwitchButtonToEmployee/>
+                    <Logout />
+                </nav>
             </header>
 
             <main>
@@ -18,7 +24,7 @@ export function ManagerPageCompanyExpenses() {
 
                 </div>
                 <div className="managerViewSection">
-                    <SirketGiderleri />
+                    <CompanyExpensesTable />
                 </div>
             </main>
         </div>

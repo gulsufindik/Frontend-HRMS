@@ -72,9 +72,11 @@ function LoginFrm({ LoginMethod }) {
           localStorage.getItem("userType") === "MANAGER" && navigate("/managerpersonel")
           localStorage.getItem("userType") === "ADMIN" && navigate("/admincommentapprove")
           localStorage.getItem("userType") === "EMPLOYEE" && navigate("/personelpagepersonalinformation")
+          localStorage.getItem("userType") === "VISITOR" && navigate("/visitorpagepersonelinfo")
+          
         }
         if(data.fields){
-          setError(data.fields)
+          setError(data.fields[0])
         }else{
           setError(data.message)
         }
