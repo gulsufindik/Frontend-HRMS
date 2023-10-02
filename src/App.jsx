@@ -22,9 +22,14 @@ import { AdminCommentApprove } from "./Pages/MainPages/AdminApproveComment";
 import { AdminManagerRegisterApprove } from "./Pages/MainPages/AdminApproveRegisterManager";
 import { VisitorPagePersonalInfo } from "./Pages/MainPages/VisitorPagePersonalInfo";
 import { VisitorPageCompanyContact } from "./Pages/MainPages/VisitorPageCompanyContact";
+
+import { MainPage } from "./Pages/MainPages/MainPage";
+import { CompanyPage } from "./components/CompanyPage";
+
 import { ManagerRegisterEmployee } from "./Pages/MainPages/ManagerRegisterEmployee";
 import { EmployeeCommentToCompany } from "./Pages/MainPages/PersonelCommentToCompany";
 import { ManagerCreateEmployeeDayOff } from "./Pages/MainPages/ManagerCreateEmployeeDayOff";
+
 
 function App() {
 
@@ -62,6 +67,11 @@ function App() {
     
     <Route path="/visitorpagepersonelinfo" element={<VisitorPagePersonalInfo/>} ></Route>
     <Route path="/visitorpagepecontact" element={<VisitorPageCompanyContact/>} ></Route>
+
+    <Route path="/mainpage" element={<MainPage/>} ></Route>
+
+    <Route path="/companypage" element={<CompanyPage/>} ></Route>
+    
    </Routes>
 
     
