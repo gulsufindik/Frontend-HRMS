@@ -143,7 +143,9 @@ form {
 
 input[type="email"],
 input[type="password"],
-input[type="text"], input[type="date"],input[type="number"] {
+input[type="text"],
+ input[type="date"],
+ input[type="number"]{
   height: 40px;
   padding: 8px 16px;
   width: 300px;
@@ -157,7 +159,7 @@ input[type="text"], input[type="date"],input[type="number"] {
 input[type="email"]::placeholder,
 input[type="password"]::placeholder,
 input[type="text"]::placeholder,
-input[type="number"]::placeholder {
+input[type="number"]::placeholder{
   color: white;
 }
 
@@ -944,7 +946,7 @@ margin-bottom: 5px;
 
 .databaseCompany>h1{
   color: #ddd;
-=======
+}
 /* Leave a Comment  */
 .comment-input {
   min-height: 180px;
@@ -965,4 +967,25 @@ margin-bottom: 5px;
 .submit-button:hover {
   background-color: #0056b3; 
 
+}
+
+/* ================= file input ================ */
+
+#file {
+  height: 40px;
+  padding: 8px 16px;
+  width: 300px;
+  font-size: 1.1rem;
+  background-color: var(--clr-primary);
+  border-radius: 10px;
+  color: white;
+}
+
+#file:hover {
+  background-color: var(--clr-secondary);
+  border-color: #999;
+}
+
+#file:focus {
+  background-color: var(--clr-secondary);
 }
