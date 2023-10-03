@@ -69,10 +69,10 @@ function LoginFrm({ LoginMethod }) {
           localStorage.setItem("userType",data.userType)
           data.companyName !== null && localStorage.setItem("companyName",data.companyName)
           
-          localStorage.getItem("userType") === "MANAGER" && navigate("/managerpersonel")
-          localStorage.getItem("userType") === "ADMIN" && navigate("/admincommentapprove")
-          localStorage.getItem("userType") === "EMPLOYEE" && navigate("/personelpagepersonalinformation")
-          localStorage.getItem("userType") === "VISITOR" && navigate("/mainpage")
+          localStorage.getItem("userType") === "MANAGER" && navigate("manager/managerpersonel")
+          localStorage.getItem("userType") === "ADMIN" && navigate("admin/admincommentapprove")
+          localStorage.getItem("userType") === "EMPLOYEE" && navigate("personel/personelpagepersonalinformation")
+          localStorage.getItem("userType") === "VISITOR" && navigate("visitor/mainpage")
           
         }
         if(data.fields){
