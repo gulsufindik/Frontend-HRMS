@@ -29,6 +29,7 @@ import { CompanyPage } from "./components/CompanyPage";
 import { ManagerRegisterEmployee } from "./Pages/MainPages/ManagerRegisterEmployee";
 import { EmployeeCommentToCompany } from "./Pages/MainPages/PersonelCommentToCompany";
 import { PersonelPageCreateDayOffRequest } from "./Pages/MainPages/ManagerCreateEmployeeDayOff";
+import { PersonelPageCreateExpenseRequest } from "./Pages/MainPages/PersonelCreateExpenseRequest";
 
 
 function App() {
@@ -61,6 +62,7 @@ function App() {
     <Route path="/personelpagepublicholiday" element={<PersonelPageCompanyPublicHoliday/>} ></Route>
     <Route path="/personelleaveacomment" element={<EmployeeCommentToCompany/>} ></Route>
     <Route path="/employeerequestdayoff" element={<PersonelPageCreateDayOffRequest />}></Route>
+    <Route path="/employeeexpenserequest" element={<PersonelPageCreateExpenseRequest />}></Route>
 
     {/* sadece adminin ulasabilecegi sayfa */}
     <Route path="/admincommentapprove" element={<AdminCommentApprove/>} ></Route>

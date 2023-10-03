@@ -12,6 +12,7 @@ export function PersonelControlButtonlari(){
         <NavLink to="/personelpagepublicholiday"><button className="personelSideBarButton" >Resmi Tatiller </button></NavLink>
         <NavLink to="/personelleaveacomment"><button className="personelSideBarButton" >Yorum Ekle</button></NavLink>
         <NavLink to="/employeerequestdayoff"><button className="managerSideBarButton" >Izin Istegi Olustur +</button></NavLink>
+        <NavLink to="/employeeexpenserequest"><button className="managerSideBarButton" >Harcama Butce Istegi Olustur +</button></NavLink>
         </div>
          
        
