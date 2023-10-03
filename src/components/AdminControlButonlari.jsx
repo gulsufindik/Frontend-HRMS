@@ -5,8 +5,8 @@ export function AdminControlButtonlari(){
 
     return(
         <div>
-        <NavLink to="/admincommentapprove"> <button className="adminSideBarButton" >Admin Yorum Onay </button></NavLink>
-        <NavLink to="/registermanagerapprove"><button className="adminSideBarButton" >Admin Yonetici Onay </button></NavLink>
+        <NavLink to="/admin/admincommentapprove"> <button className="adminSideBarButton" >Admin Yorum Onay </button></NavLink>
+        <NavLink to="/admin/registermanagerapprove"><button className="adminSideBarButton" >Admin Yonetici Onay </button></NavLink>
         </div>
     );
 }

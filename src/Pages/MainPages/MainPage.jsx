@@ -118,7 +118,7 @@ function FindAllCompany(){
   const navigateTo = useNavigate(); 
 
   const handleClick = (value) => {
-    navigateTo(`/companypage?value=${value}`);
+    navigateTo(`/visitor/companypage?value=${value}`);
     {localStorage.setItem("gotoCompanyId", value.toString())}
   };
 
@@ -139,7 +139,7 @@ function FindAllCompany(){
 
   return(
     <div className="btnCompanyContainer">
-      <NavLink to="/companypage">
+      <NavLink to="/visitor/companypage">
     {companyData.map((obj) => (
          <button  className="btnCompanyName" key={obj.id} onClick={() => handleClick(obj.id)}>
         {obj.companyName}
@@ -182,7 +182,7 @@ function FindWithName(){
         <div className="databaseCompany">
           <h1>{databaseData.companyName}</h1>
                    <p>{databaseData.about}</p>
-          <NavLink to="/companypage"> <button className="goCompany">Şirkete Git</button></NavLink>
+          <NavLink to="/visitor/companypage"> <button className="goCompany">Şirkete Git</button></NavLink>
           {localStorage.setItem("gotoCompanyId", databaseData.id.toString())}
         </div>
       )}

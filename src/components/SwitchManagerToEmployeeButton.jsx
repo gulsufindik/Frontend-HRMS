@@ -3,7 +3,7 @@ export function SwitchButtonToEmployee(){
 
     return (
         <>
-        <NavLink to="/personelpagepersonalinformation" className="navButtons"><button>Personel Sayfasi🔄</button></NavLink>
+        <NavLink to="/personel/personelpagepersonalinformation" className="navButtons"><button>Personel Sayfasi🔄</button></NavLink>
         </>
     )
 }

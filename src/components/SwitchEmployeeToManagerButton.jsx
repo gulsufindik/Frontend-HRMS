@@ -3,7 +3,7 @@ export function SwitchButtonToManager(){
 
     return (
         <>
-        <NavLink to="/managerpersonel" className="navButtons"><button>Manager Sayfasi🔄</button></NavLink>
+        <NavLink to="/manager/managerpersonel" className="navButtons"><button>Manager Sayfasi🔄</button></NavLink>
         </>
     )
 }
