@@ -28,6 +28,7 @@ export function CreateExpenseRequestForm(){
         amount: "",
         expenseType: "",
         currency: "",
+        file: ""
     })
 
     const [notificationStatus, setNotificationStatus] = useState(false);
@@ -100,6 +101,13 @@ export function CreateExpenseRequestForm(){
             </option>
           ))}
         </select>
+
+        <input 
+        type="file"
+        name="file" 
+        id="file"
+        onChange={handleChange}
+        value={expenseRequestData.file} />
 
         <button type="submit">Harcama Istegi Olustur</button>
         {notificationStatus && <p>Harcama talebi onaya gitmistir</p>}
