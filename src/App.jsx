@@ -33,6 +33,7 @@ import { EmployeeCommentToCompany } from "./Pages/MainPages/PersonelCommentToCom
 import { PersonelPageCreateDayOffRequest } from "./Pages/MainPages/ManagerCreateEmployeeDayOff";
 import { PersonelPageCreateExpenseRequest } from "./Pages/MainPages/PersonelCreateExpenseRequest";
 import { ProtectedRoute } from "./Pages/MainPages/ProtectedRoute";
+import { ManagerPendingExpenses } from "./Pages/MainPages/ManagerPendingExpenseRequests";
 
 function App() {
 
@@ -66,6 +67,7 @@ function App() {
     <Route path="managerpublicholiday" element={<ManagerPagePublicHoliday />}></Route>
     <Route path="managerpersoneltraces" element={<ManagerPagePersonelTraces />}></Route>
     <Route path="managerregisteremployee" element={<ManagerRegisterEmployee />}></Route>
+    <Route path="managerpendingexpenserequests" element={<ManagerPendingExpenses />}></Route>
     </Route>
 
     {/* personel ve manager'in ulasabilecegi sayfalar */}
