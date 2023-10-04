@@ -131,7 +131,7 @@ export function EmployeeDaysOffTable(){
 
     return(
         <>
-        {error && <p style={{color: "red", marginTop:"20px" }}>Onay bekleyen yonetici yok ¯\_(ツ)_/¯</p>}
+        {error && <p style={{color: "red", marginTop:"20px" }}>Onay bekleyen izin istegi yok ¯\_(ツ)_/¯</p>}
         {!error && <div>
                 <h1>Onay Bekleyen Izinler</h1>
                 <table className="financial-table" >
@@ -151,7 +151,7 @@ export function EmployeeDaysOffTable(){
                     <tbody>
                     {pendingDayOffRequests.length === 0 ? (
                         <tr>
-                            <td colSpan="6">Henuz veri yukleniyor...</td>
+                            <td colSpan="12">Henuz veri yukleniyor...</td>
                         </tr>
                     ) : (
                         pendingDayOffRequests.map(permission => (

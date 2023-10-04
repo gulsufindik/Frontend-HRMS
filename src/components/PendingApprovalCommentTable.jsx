@@ -153,7 +153,7 @@ export function PendingCommentTable(){
                     <tbody>
                     {pendingCommentList.length === 0 ? (
                         <tr>
-                            <td colSpan="6">Henuz veri yukleniyor...</td>
+                            <td colSpan="12">Henuz veri yukleniyor...</td>
                         </tr>
                     ) : (
                         pendingCommentList.map(comment => (

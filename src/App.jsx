@@ -33,10 +33,12 @@ import { EmployeeCommentToCompany } from "./Pages/MainPages/PersonelCommentToCom
 import { PersonelPageCreateDayOffRequest } from "./Pages/MainPages/ManagerCreateEmployeeDayOff";
 import { PersonelPageCreateExpenseRequest } from "./Pages/MainPages/PersonelCreateExpenseRequest";
 import { ProtectedRoute } from "./Pages/MainPages/ProtectedRoute";
+import { ManagerPendingExpenses } from "./Pages/MainPages/ManagerPendingExpenseRequests";
 
 function App() {
 
   return (
+
     <>
       <Routes>
         {/* herkesin ulasabilecegi sayfalar */}
@@ -57,6 +59,7 @@ function App() {
           <Route path="managerpersoneltraces" element={<ManagerPagePersonelTraces />}></Route>
           <Route path="managerregisteremployee" element={<ManagerRegisterEmployee />}></Route>
           <Route path="managerdeleteemployee" element={<ManagerDeleteEmployee />}></Route>
+          <Route path="managerpendingexpenserequests" element={<ManagerPendingExpenses />}></Route>
         </Route>
 
         {/* personel ve manager'in ulasabilecegi sayfalar */}

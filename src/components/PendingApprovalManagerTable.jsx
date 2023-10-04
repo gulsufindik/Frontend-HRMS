@@ -152,7 +152,7 @@ export function PendingApprovalManagerTable(){
                     <tbody>
                     {pendingManagerList.length === 0 ? (
                         <tr>
-                            <td colSpan="6">Henuz veri yukleniyor...</td>
+                            <td colSpan="12">Henuz veri yukleniyor...</td>
                         </tr>
                     ) : (
                         pendingManagerList.map(manager => (

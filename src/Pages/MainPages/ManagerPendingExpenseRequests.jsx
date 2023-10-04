@@ -1,10 +1,9 @@
 import { LogoLogin } from "../../components/LogoLogin";
 import { ManagerControlButtonlari } from "../../components/ManagerControlButtonlari";
-import { UpdateCompanyDetails } from "../../components/UpdateCompanyDetails";
 import { Logout } from "../../components/LogoutButton";
 import { SwitchButtonToEmployee } from "../../components/SwitchManagerToEmployeeButton";
-
-export function ManagerPendingApproval(){
+import { ExpenseRequestsTable } from "../../components/ManagerPendingExpensesTable";
+export function ManagerPendingExpenses(){
     return(
         <div className="managerPage">
 
@@ -23,8 +22,8 @@ export function ManagerPendingApproval(){
            
             </div>
             <div className="managerViewSection">
-               {/* <h3>Sirket Bilgilerini Guncelle</h3> */}
-               <UpdateCompanyDetails />
+                <h2>Harcama istekleri</h2>
+                <ExpenseRequestsTable />
             </div>
         </main>
         </div>
