@@ -32,7 +32,6 @@ export function AllPersonalTable() {
                     }
                 }
 
-
             })
             .catch(error => console.log(error.message));
     }, []);

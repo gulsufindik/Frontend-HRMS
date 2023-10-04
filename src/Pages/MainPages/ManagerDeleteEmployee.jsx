@@ -32,20 +32,18 @@ function ListWorkersMethod() {
         });
 }
 
-<header>
-    <nav >
-        <LogoLogin />
-        <SwitchButtonToEmployee />
-        <Logout />
-    </nav>
-</header>
+
 
 
 export function ManagerDeleteEmployee() {
     return (
         <div className="managerPage">
             <header>
-                <LogoLogin />
+                <nav >
+                    <LogoLogin />
+                    <SwitchButtonToEmployee />
+                    <Logout />
+                </nav>
             </header>
             <main>
                 <div className="managerSideBar">

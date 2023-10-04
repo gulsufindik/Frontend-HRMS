@@ -32,20 +32,16 @@ function PaymentContactApiMethod() {
     });
 }
 
-         <header>
-         <nav >
-            <LogoLogin/>
-            <SwitchButtonToEmployee />
-            <Logout />
-          </nav>
-        </header>
-
 
 export function ManagerPageUpcomingPayment() {
   return (
     <div className="managerPage">
       <header>
-        <LogoLogin />
+        <nav >
+          <LogoLogin />
+          <SwitchButtonToEmployee />
+          <Logout />
+        </nav>
       </header>
       <main>
         <div className="managerSideBar">
@@ -82,29 +78,29 @@ function Table() {
 
   function handlePayButtonClick(id) {
     const isConfirmed = window.confirm("Ödeme yapıldı mı?")
-    if(isConfirmed){
+    if (isConfirmed) {
       // Veritabanından öğeyi silmek için API isteği yap
-    fetch(`http://localhost:8080/upcoming/deletebyid/${id}`, {
-      method: "DELETE",
-      headers: { "Content-Type": "application/json" },
-    })
-      .then((resp) => {
-        if (!resp.ok) {
-          console.log("Silme işlemi başarısız oldu.");
-        } else {
-          // Başarıyla silinirse, veriyi güncelleyin
-          setUpcomingPaymentData((prevData) => prevData.filter((obj) => obj.id !== id));
-        }
+      fetch(`http://localhost:8080/upcoming/deletebyid/${id}`, {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
       })
-      .catch((err) => {
-        console.error("Hata:", err);
-      });
+        .then((resp) => {
+          if (!resp.ok) {
+            console.log("Silme işlemi başarısız oldu.");
+          } else {
+            // Başarıyla silinirse, veriyi güncelleyin
+            setUpcomingPaymentData((prevData) => prevData.filter((obj) => obj.id !== id));
+          }
+        })
+        .catch((err) => {
+          console.error("Hata:", err);
+        });
 
       window.alert("Ödeme başarıyla tamamlandı!");
-    }else{
+    } else {
       window.alert("Ödeme iptal edildi.");
     }
-    
+
   }
 
   if (error) {
