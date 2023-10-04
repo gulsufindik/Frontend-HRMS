@@ -23,9 +23,11 @@ import { AdminManagerRegisterApprove } from "./Pages/MainPages/AdminApproveRegis
 import { VisitorPagePersonalInfo } from "./Pages/MainPages/VisitorPagePersonalInfo";
 import { VisitorPageCompanyContact } from "./Pages/MainPages/VisitorPageCompanyContact";
 
+
 import { MainPage } from "./Pages/MainPages/MainPage";
 import { CompanyPage } from "./components/CompanyPage";
 
+import { ManagerDeleteEmployee } from "./Pages/MainPages/ManagerDeleteEmployee";
 import { ManagerRegisterEmployee } from "./Pages/MainPages/ManagerRegisterEmployee";
 import { EmployeeCommentToCompany } from "./Pages/MainPages/PersonelCommentToCompany";
 import { PersonelPageCreateDayOffRequest } from "./Pages/MainPages/ManagerCreateEmployeeDayOff";
@@ -45,6 +47,17 @@ function App() {
     <Route path="/forgotpassword" element={<ForgotPassword />}></Route>
 
     {/* sadece managerin ulasabilecegi sayfalar */}
+
+    <Route path="/managerpersonel" element={<ManagerPagePersonel />}></Route>
+    <Route path="/managerpendingapproval" element={<ManagerPendingApproval />}></Route>
+    <Route path="/managerprofitloss" element={<ManagerPageProfitLoss />}></Route>
+    <Route path="/managercompanyexpenses" element={<ManagerPageCompanyExpenses />}></Route>
+    <Route path="/managerupcomingpayment" element={<ManagerPageUpcomingPayment />}></Route>
+    <Route path="/managerpublicholiday" element={<ManagerPagePublicHoliday />}></Route>
+    <Route path="/managerpersoneltraces" element={<ManagerPagePersonelTraces />}></Route>
+    <Route path="/managerregisteremployee" element={<ManagerRegisterEmployee />}></Route>
+    <Route path="/managerdeleteemployee" element={<ManagerDeleteEmployee />}></Route>
+
     <Route path="/manager" element={<ProtectedRoute />}>
     <Route path="managerpersonel" element={<ManagerPagePersonel />}></Route>
     <Route path="managerpendingapproval" element={<ManagerPendingApproval />}></Route>
