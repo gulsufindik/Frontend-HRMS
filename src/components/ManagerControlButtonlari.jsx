@@ -6,6 +6,7 @@ export function ManagerControlButtonlari(){
     return(
         <div>
         <NavLink to="/managerregisteremployee"><button className="managerSideBarButton" >Personel Ekle +</button></NavLink>
+        <NavLink to="/managerdeleteemployee"><button className="managerSideBarButton" >Personel Sil -</button></NavLink>
         <NavLink to="/managerpersonel"> <button className="managerSideBarButton" >Personeller </button></NavLink>
         <NavLink to="/managerpendingapproval"><button className="managerSideBarButton" >Sirket Bilgilerini Guncelle </button></NavLink>
         <NavLink to="/managerprofitloss"><button className="managerSideBarButton" >Kar Zarar Durumu </button></NavLink>

@@ -23,9 +23,11 @@ import { AdminManagerRegisterApprove } from "./Pages/MainPages/AdminApproveRegis
 import { VisitorPagePersonalInfo } from "./Pages/MainPages/VisitorPagePersonalInfo";
 import { VisitorPageCompanyContact } from "./Pages/MainPages/VisitorPageCompanyContact";
 
+
 import { MainPage } from "./Pages/MainPages/MainPage";
 import { CompanyPage } from "./components/CompanyPage";
 
+import { ManagerDeleteEmployee } from "./Pages/MainPages/ManagerDeleteEmployee";
 import { ManagerRegisterEmployee } from "./Pages/MainPages/ManagerRegisterEmployee";
 import { EmployeeCommentToCompany } from "./Pages/MainPages/PersonelCommentToCompany";
 import { PersonelPageCreateDayOffRequest } from "./Pages/MainPages/ManagerCreateEmployeeDayOff";
@@ -51,7 +53,7 @@ function App() {
     <Route path="/managerpublicholiday" element={<ManagerPagePublicHoliday />}></Route>
     <Route path="/managerpersoneltraces" element={<ManagerPagePersonelTraces />}></Route>
     <Route path="/managerregisteremployee" element={<ManagerRegisterEmployee />}></Route>
-    
+    <Route path="/managerdeleteemployee" element={<ManagerDeleteEmployee />}></Route>
 
     {/* personel ve manager'in ulasabilecegi sayfalar */}
     <Route path="/personelpagepersonalinformation" element={<PersonelPagePersonalInformation/>} ></Route>
