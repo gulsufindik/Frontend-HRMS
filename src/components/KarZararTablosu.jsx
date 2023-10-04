@@ -56,7 +56,7 @@ export function FinancialPerformanceTable(){
                     <tbody>
                     {listAllYears.length === 0 ? (
                         <tr>
-                            <td colSpan="6">Henuz veri yukleniyor...</td>
+                            <td colSpan="12">Henuz veri yukleniyor...</td>
                         </tr>
                     ) : (
                         listAllYears.map(item => (
