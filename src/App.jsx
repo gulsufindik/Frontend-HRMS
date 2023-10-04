@@ -34,6 +34,7 @@ import { PersonelPageCreateDayOffRequest } from "./Pages/MainPages/ManagerCreate
 import { PersonelPageCreateExpenseRequest } from "./Pages/MainPages/PersonelCreateExpenseRequest";
 import { ProtectedRoute } from "./Pages/MainPages/ProtectedRoute";
 import { ManagerPendingExpenses } from "./Pages/MainPages/ManagerPendingExpenseRequests";
+import { PersonalPageUpdatePersonalInfo } from "./Pages/MainPages/PersonalPageUpdatePersonalInfo";
 
 function App() {
 
@@ -65,6 +66,7 @@ function App() {
         {/* personel ve manager'in ulasabilecegi sayfalar */}
         <Route path="/personel" element={<ProtectedRoute />}>
           <Route path="personelpagepersonalinformation" element={<PersonelPagePersonalInformation />} ></Route>
+          <Route path="personelpageupdateinformation" element={<PersonalPageUpdatePersonalInfo />} ></Route>
           <Route path="personelpagepecompanyinfo" element={<PersonelPageCompanyInfo />} ></Route>
           <Route path="personelpagepebreaktime" element={<PersonelPageCompanyBreakTime />} ></Route>
           <Route path="personelpagepecontact" element={<PersonelPageCompanyContact />} ></Route>
