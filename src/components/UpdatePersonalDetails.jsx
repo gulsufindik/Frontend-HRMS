@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 
 const updatePersonalDetailsUrl = "http://localhost:8080/user/update";
-const findByCompanyNameUrl = `http://localhost:8080/user/findbycompanyname?companyName=${localStorage.getItem(
-    "companyName"
+const findUserByTokenUrl = `http://localhost:8080/user/employeeinfo?token=${localStorage.getItem(
+    "token"
 )}`;
 
 function updatePersonalDetailsMethod(personalDetailsData) {
@@ -11,6 +11,7 @@ function updatePersonalDetailsMethod(personalDetailsData) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(personalDetailsData),
     };
+    console.log(personalDetailsData)
     return fetch(updatePersonalDetailsUrl, options)
         .then((resp) => resp.json())
         .then((data) => {
@@ -19,8 +20,8 @@ function updatePersonalDetailsMethod(personalDetailsData) {
         .catch((err) => console.log(err.message));
 }
 
-function findByCompanyNameMethod() {
-    return fetch(findByCompanyNameUrl)
+function findUserByTokenMethod() {
+    return fetch(findUserByTokenUrl)
         .then((resp) => resp.json())
         .then((data) => data)
         .catch((err) => console.log(err.message));
@@ -28,6 +29,7 @@ function findByCompanyNameMethod() {
 
 export function UpdatePersonalDetails() {
     const [personalDetailsData, setPersonalDetailsData] = useState({
+        token: localStorage.getItem("token"),
         username: "",
         name: "",
         surname: "",
@@ -44,9 +46,10 @@ export function UpdatePersonalDetails() {
 
     useEffect(() => {
         console.log("Burdayiz")
-        findByCompanyNameMethod()
+        findUserByTokenMethod()
             .then((data) => {
-                if (data.companyName) {
+                if (data.name) {
+                    console.log(data)
                     setPersonalDetailsData({
                         username: data.username,
                         name: data.name,
@@ -54,7 +57,7 @@ export function UpdatePersonalDetails() {
                         password: data.password,
                         personalEmail: data.personalEmail,
                         phoneNumber: data.phoneNumber,
-                        salary: data.salary.toString(),
+                        salary: data.salary,
                     });
                     console.log(personalDetailsData);
                 }
@@ -64,8 +67,9 @@ export function UpdatePersonalDetails() {
     }, []);
 
     function handleChange(e) {
+        console.log(personalDetailsData)
         setPersonalDetailsData({ ...personalDetailsData, [e.target.name]: e.target.value });
-
+        console.log(personalDetailsData)
     }
 
     function handlePersonalDetailsDataSubmit(e) {
