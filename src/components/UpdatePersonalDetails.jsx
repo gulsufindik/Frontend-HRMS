@@ -29,7 +29,7 @@ function findUserByTokenMethod() {
 
 export function UpdatePersonalDetails() {
     const [personalDetailsData, setPersonalDetailsData] = useState({
-        token: localStorage.getItem("token"),
+        token: `${localStorage.getItem("token")}`,
         username: "",
         name: "",
         surname: "",
@@ -51,6 +51,7 @@ export function UpdatePersonalDetails() {
                 if (data.name) {
                     console.log(data)
                     setPersonalDetailsData({
+                        token: localStorage.getItem("token"),
                         username: data.username,
                         name: data.name,
                         surname: data.surname,
