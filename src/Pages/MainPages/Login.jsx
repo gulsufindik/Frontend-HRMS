@@ -30,17 +30,17 @@ export function Login() {
   return (
     <>
       <header>
-        <nav>
+        <nav style={{backgroundColor:"rgb(239, 230, 232)"}}>
           <LogoLogin />
           <KayitOlButton />
         </nav>
       </header>
-      <main>
-        <div>
+      <main style={{backgroundColor:"rgb(239, 230, 232)"}}>
+        <div >
           <LoginFrm LoginMethod={LoginMethod} />
         </div>
       </main>
-      <footer>
+      <footer style={{backgroundColor:"rgb(239, 230, 232)"}}>
         <img src="../../../public/images/Footer_upscaled.png" alt="" />
       </footer>
     </>

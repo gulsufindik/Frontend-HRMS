@@ -25,18 +25,18 @@ export function RegisterVisitor() {
 
   return (
     <>
-      <header>
+      <header style={{backgroundColor:"rgb(239, 230, 232)"}}>
         <nav>
         <LogoLogin />
         <GirisYap />
         </nav>
       </header>
-      <main>
+      <main style={{backgroundColor:"rgb(239, 230, 232)"}}>
         <div>
       <RegisterVisitorFrm  registerVisitorMethod={registerVisitorMethod}/>
         </div>
       </main>
-      <footer>
+      <footer style={{backgroundColor:"rgb(239, 230, 232)"}}>
         <img src="../../../public/images/Footer_upscaled.png" alt="" />
       </footer>
     </>

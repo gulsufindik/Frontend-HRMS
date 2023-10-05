@@ -19,7 +19,6 @@ export function AdminManagerRegisterApprove(){
             </div>
 
             <div className="adminViewSection">
-                <h3 style={{backgroundColor: "#093545",color:"white", display: "flex", border:"2px solid black", width:"100%", justifyContent:"center" }}>Admin:Yonetici Kayit Onayi</h3>
                 <PendingApprovalManagerTable />
             </div>
         </main>
