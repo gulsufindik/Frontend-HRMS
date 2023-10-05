@@ -123,8 +123,8 @@ function Table() {
           {upcomingPaymentData.map((obj) => (
             <tr className="tableROW" key={obj.id}>
               <td className="td">{obj.paymentName}</td>
-              <td className="td">{obj.paymentamount}</td>
-              <td className="td">{obj.paymentdate}</td>
+              <td className="td">{obj.paymentAmount}</td>
+              <td className="td">{obj.paymentDate}</td>
               <button className="tdbtn" onClick={() => handlePayButtonClick(obj.id)}>
                 Ödendi Yap
               </button>
