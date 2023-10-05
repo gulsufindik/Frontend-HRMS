@@ -2,6 +2,7 @@ import { LogoLogin } from "../../components/LogoLogin";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from 'react-router-dom'
+import { Logout } from "../../components/LogoutButton";
 
 function GetAllCompany() {
   const url = `http://localhost:8080/company/findall2`;
@@ -63,63 +64,63 @@ export function MainPage() {
     <div className="mainPageContainer">
       <header>
         <LogoLogin />
-        <button className="loginMainbtn">Giriş</button>
+        <Logout />
       </header>
       <main>
         <div className="abotUsContainer">
           <div className="aboutİnfo">
             <h3 className="aboutTitle">Hakkımızda:</h3>
             <p className="aboutParagraf">
-             
-            Yonca ile tanışalım. Yonca, dört kişilik bir girişimci grubu tarafından 2023 yılında kurulmuştur. Amacı, yüksek kullanıcı memnuniyetini basit arayüzü ve işlevselliği sayesinde sağlamaktır. Artık her şey daha kolay.
+
+              Yonca ile tanışalım. Yonca, dört kişilik bir girişimci grubu tarafından 2023 yılında kurulmuştur. Amacı, yüksek kullanıcı memnuniyetini basit arayüzü ve işlevselliği sayesinde sağlamaktır. Artık her şey daha kolay.
             </p>
-           
+
           </div>
           <div className="aboutView">
             <img className="resim1" src="https://cdn.ankaramasasi.com/2023/9/23/dgs-insan-kaynaklari-yonetimi-2023-taban-puanlari-ve-basari-siralamalari-irltdjwg.jpeg" alt="Güzel Bir Manzara Resmi" />
-            
+
           </div>
         </div>
 
-        <div className="companySectionMainPage"> 
-            <div className="companyview">
-                <img className="resim2" src="https://blog.experlize.com/wp-content/uploads/2020/11/ekip-yonetimi-nedir.jpg"></img>
-            </div>
-            <div className="findCompany">
-            <FindWithName/>            
-              
-            </div>
+        <div className="companySectionMainPage">
+          <div className="companyview">
+            <img className="resim2" src="https://blog.experlize.com/wp-content/uploads/2020/11/ekip-yonetimi-nedir.jpg"></img>
+          </div>
+          <div className="findCompany">
+            <FindWithName />
+
+          </div>
         </div>
 
         <div className="allCompanySectionMainPage">
-        <div className="companylist">
-        <h1>İş Ortaklarımız</h1>
-         <FindAllCompany/>  
-        </div>   
+          <div className="companylist">
+            <h1>İş Ortaklarımız</h1>
+            <FindAllCompany />
+          </div>
 
-        <div className="companyview">
-                <img className="resim2" src="https://d6xcmfyh68wv8.cloudfront.net/learn-content/uploads/2019/09/register-company-online.png"></img>
+          <div className="companyview">
+            <img className="resim2" src="https://d6xcmfyh68wv8.cloudfront.net/learn-content/uploads/2019/09/register-company-online.png"></img>
 
-            </div>
+          </div>
         </div>
 
-        
+
       </main>
-     
+
     </div>
   );
 }
 
-function FindAllCompany(){
+function FindAllCompany() {
 
 
   const [companyData, setCompanyData] = useState([]);
   const [error, setError] = useState(null);
-  const navigateTo = useNavigate(); 
+  const navigateTo = useNavigate();
 
   const handleClick = (value) => {
     navigateTo(`/visitor/companypage?value=${value}`);
-    {localStorage.setItem("gotoCompanyId", value.toString())}
+    { localStorage.setItem("gotoCompanyId", value.toString()) }
   };
 
   useEffect(() => {
@@ -132,28 +133,28 @@ function FindAllCompany(){
         console.log("Hata:", err.message);
       });
   }, []);
-  
+
   if (error) {
     return <div className="hata">{error}</div>;
   }
 
-  return(
+  return (
     <div className="btnCompanyContainer">
       <NavLink to="/visitor/companypage">
-    {companyData.map((obj) => (
-         <button  className="btnCompanyName" key={obj.id} onClick={() => handleClick(obj.id)}>
-        {obj.companyName}
-      </button>
-      ))}
-    </NavLink>
-  </div>
+        {companyData.map((obj) => (
+          <button className="btnCompanyName" key={obj.id} onClick={() => handleClick(obj.id)}>
+            {obj.companyName}
+          </button>
+        ))}
+      </NavLink>
+    </div>
   );
 }
 
-function FindWithName(){
+function FindWithName() {
   const [companyName, setCompanyName] = useState("");
   const [databaseData, setDatabaseData] = useState([]);
-  
+
   const handleQueryClick = () => {
     if (companyName) {
       GetCompanyWith(companyName)
@@ -166,29 +167,29 @@ function FindWithName(){
 
 
 
-  return(
-<div className="findCompany">
-            
-            <input className="findCompanyInput"
-            placeholder="Şirket Bul..."
-            value={companyName}
-            onChange={(e) => setCompanyName(e.target.value)}
-            />
-          
-            <button className="findCompanybtn1"></button> 
-             <button className="findCompanybtn2"  onClick={() => handleQueryClick(companyName)}>ARA</button> 
-            <button className="findCompanybtn3"></button>
-            {databaseData.companyName && (
+  return (
+    <div className="findCompany">
+
+      <input className="findCompanyInput"
+        placeholder="Şirket Bul..."
+        value={companyName}
+        onChange={(e) => setCompanyName(e.target.value)}
+      />
+
+      <button className="findCompanybtn1"></button>
+      <button className="findCompanybtn2" onClick={() => handleQueryClick(companyName)}>ARA</button>
+      <button className="findCompanybtn3"></button>
+      {databaseData.companyName && (
         <div className="databaseCompany">
           <h1>{databaseData.companyName}</h1>
-                   <p>{databaseData.about}</p>
+          <p>{databaseData.about}</p>
           <NavLink to="/visitor/companypage"> <button className="goCompany">Şirkete Git</button></NavLink>
           {localStorage.setItem("gotoCompanyId", databaseData.id.toString())}
         </div>
       )}
-           
-            
-          </div>
+
+
+    </div>
   );
 }
 
