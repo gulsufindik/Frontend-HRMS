@@ -6,29 +6,16 @@ import { SwitchButtonToEmployee } from "../../components/SwitchManagerToEmployee
 
 function PaymentContactApiMethod() {
   const url = `http://localhost:8080/upcoming/findallwithcompanyname?companyName=${localStorage.getItem("companyName")}`;
-  const options = {
-    method: "GET",
-    headers: { "Content-Type": "application/json" },
-  };
-
-
-  return fetch(url, options)
+  
+  return fetch(url)
     .then((resp) => {
-      if (!resp.ok) {
-        return resp.json().then((error) => {
-          throw new Error(error.message); // API'den dönen hata mesajını yakala ve fırlat
-        });
-      }
       return resp.json();
     })
     .then((data) => {
-      console.log("Veri Tipi:", typeof data);
-      console.log(data);
       return data;
     })
     .catch((err) => {
       console.error(err.message);
-      throw err;
     });
 }
 
@@ -68,7 +55,13 @@ function Table() {
   useEffect(() => {
     PaymentContactApiMethod()
       .then((data) => {
-        setUpcomingPaymentData(data);
+        console.log(data)
+        if(Array.isArray(data)){
+          console.log(data)
+        setUpcomingPaymentData(data);}
+        if(data.code){
+          setError(data.message)
+        }
       })
       .catch((err) => {
         setError(err.message);
@@ -120,14 +113,15 @@ function Table() {
           </tr>
         </thead>
         <tbody>
-          {upcomingPaymentData.map((obj) => (
+          {upcomingPaymentData != null && upcomingPaymentData.map((obj) => (
             <tr className="tableROW" key={obj.id}>
               <td className="td">{obj.paymentName}</td>
               <td className="td">{obj.paymentAmount}</td>
               <td className="td">{obj.paymentDate}</td>
+              <td>
               <button className="tdbtn" onClick={() => handlePayButtonClick(obj.id)}>
                 Ödendi Yap
-              </button>
+              </button></td>
             </tr>
           ))}
         </tbody>
