@@ -62,7 +62,7 @@ export function MainPage() {
 
   return (
     <div className="mainPageContainer">
-      <header>
+      <header style={{backgroundColor:"white"}}>
         <LogoLogin />
         <Logout />
       </header>
