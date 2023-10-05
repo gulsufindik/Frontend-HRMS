@@ -33,6 +33,10 @@ export function UpdateCompanyDetails() {
       taxNo: "",
       numOfEmployees: "",
       about: "",
+      phone:"",
+      address:"",
+      companyEmail:"",
+      fax:"",
     });
   
     const [notificationStatus, setNotificationStatus] = useState(false);
@@ -52,6 +56,10 @@ export function UpdateCompanyDetails() {
               taxNo: data.taxNo,
               numOfEmployees: data.numOfEmployees.toString(),
               about: data.about,
+              phone: data.phone,
+              address: data.address,
+              companyEmail: data.companyEmail,
+              fax :  data.fax
             });
             console.log(companyDetailsData);
           }
@@ -71,7 +79,9 @@ export function UpdateCompanyDetails() {
       updateCompanyDetailsMethod(companyDetailsData)
         .then((data) => {
           if (data) {
-            setNotificationStatus(!notificationStatus);
+            setNotificationStatus(true);
+            localStorage.getItem("companyName") !== companyDetailsData.companyName && localStorage.setItem('companyName', companyDetailsData.companyName )
+            
           }
   
           if (data.fields) {
@@ -81,6 +91,7 @@ export function UpdateCompanyDetails() {
           }
         })
         .catch((err) => console.log(err.message));
+        
     }
     function handleEditCompanyNameClick() {
         setIsCompanyNameEditable(!isCompanyNameEditable); 
@@ -106,7 +117,7 @@ export function UpdateCompanyDetails() {
                 readOnly={!isCompanyNameEditable}
               />
               {!isCompanyNameEditable ?  (
-              <button type="button" onClick={handleEditCompanyNameClick}>
+              <button type="button" style={{height:"20px"}} onClick={handleEditCompanyNameClick}>
                 Düzenle
               </button>
             ) : (
@@ -164,8 +175,56 @@ export function UpdateCompanyDetails() {
                 value={companyDetailsData.about}
               />
             </div>
+
+            <div className="form-group">
+              <label htmlFor="phone">Sirket Telefon Numarasi</label>
+              <input
+                type="tel"
+                name="phone"
+                id="phone"
+                placeholder="Telefon Numarasi"
+                onChange={handleChange}
+                value={companyDetailsData.phone}
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="address">Sirket Adres Bilgisi</label>
+              <input
+                type="text"
+                name="address"
+                id="address"
+                placeholder="Adres Bilgisi"
+                onChange={handleChange}
+                value={companyDetailsData.address}
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="companyEmail">Sirket Mail Adresi</label>
+              <input
+                type="text"
+                name="companyEmail"
+                id="companyEmail"
+                placeholder="Mail Adresi"
+                onChange={handleChange}
+                value={companyDetailsData.companyEmail}
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="fax">Sirket Fax Numarasi</label>
+              <input
+                type="text"
+                name="fax"
+                id="fax"
+                placeholder="Fax Numarasi"
+                onChange={handleChange}
+                value={companyDetailsData.fax}
+              />
+            </div>
   
-            <button type="submit">Guncelle</button>
+            <button type="submit" style={{height:"30px"}}>Guncelle</button>
           </form>
         )}
         {notificationStatus && <p>Guncelleme Basarili</p>}

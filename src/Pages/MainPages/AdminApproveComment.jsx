@@ -19,7 +19,6 @@ export function AdminCommentApprove(){
             </div>
 
             <div className="adminViewSection">
-                <h3 style={{backgroundColor: "#093545",color:"white", display: "flex", border:"2px solid black", width:"100%", justifyContent:"center" }}>Admin:Sirket Yorum Onay</h3>
                 <PendingCommentTable />
             </div>
         </main>

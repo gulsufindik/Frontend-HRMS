@@ -45,6 +45,7 @@ h4 {
 /* ====================== */
 #root {
   height: 100vh;
+  background-color: var(--clr-primary);
 }
 
 /* Genel Yapi */
@@ -145,8 +146,9 @@ input[type="email"],
 input[type="password"],
 input[type="text"],
  input[type="date"],
- input[type="number"]{
-  height: 40px;
+ input[type="number"],
+ input[type="tel"]{
+  height: 30px;
   padding: 8px 16px;
   width: 300px;
   font-size: 1.1rem;
@@ -159,7 +161,8 @@ input[type="text"],
 input[type="email"]::placeholder,
 input[type="password"]::placeholder,
 input[type="text"]::placeholder,
-input[type="number"]::placeholder{
+input[type="number"]::placeholder
+input[type="tel"]::placeholder{
   color: white;
 }
 
@@ -215,7 +218,7 @@ form>select{
 }
 
 .managerPage>main>.managerSideBar {
-  border: 2px solid #20DF7F;
+  /* border: 2px solid #20DF7F; */
   background-color: #093545;
   border-radius: 15px;
   display: flex;
@@ -252,11 +255,11 @@ form>select{
 }
 
 .managerViewSection {
-  border: 2px solid pink;
+  /* border: 2px solid pink; */
   display: flex;
   align-items: center;
   justify-content: start;
-  width: 80vw;
+  width: 100vw;
   height: 90vh;
   overflow-x: auto;
 }
@@ -406,7 +409,7 @@ margin-bottom: 5px;
 }
 
 .personelPage>main>.personelSideBar {
-  border: 2px solid #20DF7F;
+  /* border: 2px solid #20DF7F; */
   background-color: #093545;
   border-radius: 15px;
   display: flex;
@@ -443,13 +446,14 @@ margin-bottom: 5px;
 }
 
 .personelViewSection {
-  border: 2px solid pink;
+  /* border: 2px solid pink; */
   display: flex;
   align-items: center;
   justify-content: start;
-  width: 80vw;
+  width: 100vw;
   height: 90vh;
   overflow-x: auto;
+  background-color: rgb(239, 230, 232);
 }
 
 /* Personal Info Page CSS */
@@ -502,7 +506,7 @@ margin-bottom: 5px;
 }
 
 .adminPage>main>.adminSideBar {
-  border: 2px solid #20DF7F;
+  /* border: 2px solid #20DF7F; */
   background-color: #093545;
   border-radius: 15px;
   display: flex;
@@ -539,11 +543,12 @@ margin-bottom: 5px;
 }
 
 .adminViewSection {
-  border: 2px solid pink;
+  /* border: 2px solid pink; */
+  background-color: rgb(239, 230, 232);
   display: flex;
   align-items: center;
   justify-content: start;
-  width: 80vw;
+  width: 100vw;
   height: 90vh;
   overflow-x: auto;
 }
