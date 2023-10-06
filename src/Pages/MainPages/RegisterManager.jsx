@@ -66,6 +66,7 @@ function RegisterManagerFrm({ registerManagerMethod }) {
 
   function handleRegisterManagerSubmit(e){
     e.preventDefault();
+    
     registerManagerMethod(managerForm).then((data)=>{
       console.log(data);
       if(data.token){
@@ -77,7 +78,7 @@ function RegisterManagerFrm({ registerManagerMethod }) {
         setError(data.message)
       }
     }).catch((err)=>console.log(err.message))
-  }
+}
 
   return (
     <>

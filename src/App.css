@@ -994,3 +994,8 @@ margin-bottom: 5px;
 #file:focus {
   background-color: var(--clr-secondary);
 }
+
+#phone{
+  outline: 0;
+}
+

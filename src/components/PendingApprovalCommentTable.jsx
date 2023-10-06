@@ -55,7 +55,7 @@ export function PendingCommentTable(){
 
 
 
-    // Onaylama icin gerekli Hooklar
+    // Onaylama icin gerekli Hooklar 
     const[approveData,setApproveData]= useState({
         userType:localStorage.getItem("userType"),
         commentId:null,
@@ -122,7 +122,7 @@ export function PendingCommentTable(){
     useEffect(()=>{
         fetchAllPendingCommentsMethod().then((data)=>{
             if(Array.isArray(data)){
-                setPendingCommentList(data)
+                setPendingCommentList([...data])
             }else{
                 if(data.fields){
                     setError(data.fields)
@@ -132,7 +132,7 @@ export function PendingCommentTable(){
             }
             
         }).catch((err)=>console.log(err.message))
-    },[approveData]);
+    },[]);
 
     return(
         <>

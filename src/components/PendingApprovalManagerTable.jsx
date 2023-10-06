@@ -77,7 +77,7 @@ export function PendingApprovalManagerTable(){
                 }
             }
         }).catch((err)=>console.log(err.message))
-    },[])
+    },[pendingManagerList])
 
     // Onaylama Metodu
     function handleApproveClick(AuthIdOfManager){
