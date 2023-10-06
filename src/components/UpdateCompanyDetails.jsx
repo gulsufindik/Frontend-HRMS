@@ -69,23 +69,24 @@ export function UpdateCompanyDetails() {
     }, []);
   
     function handleChange(e) {
-      setCompanyDetailsData({ ...companyDetailsData, [e.target.name]: e.target.value });
-
+        setCompanyDetailsData({ ...companyDetailsData, [e.target.name]:e.target.value });
     }
+
+    
+
   
     function handleCompanyDetailsDataSubmit(e) {
       e.preventDefault();
       console.log(companyDetailsData)
       updateCompanyDetailsMethod(companyDetailsData)
         .then((data) => {
-          if (data) {
+          if (data.successMessage) {
             setNotificationStatus(true);
+            setError(null)
             localStorage.getItem("companyName") !== companyDetailsData.companyName && localStorage.setItem('companyName', companyDetailsData.companyName )
-            
           }
-  
           if (data.fields) {
-            setError(data.fields);
+            setError(data.fields[0]);
           } else {
             setError(data.message);
           }
@@ -95,6 +96,23 @@ export function UpdateCompanyDetails() {
     }
     function handleEditCompanyNameClick() {
         setIsCompanyNameEditable(!isCompanyNameEditable); 
+      }
+
+      function formatPhoneNumber(value){
+        if(!value) return value;
+        const phoneNumber = value.replace(/[^\d]/g,'');
+        const phoneNumberLength = phoneNumber.length;
+        if(phoneNumberLength < 4) return phoneNumber;
+        if(phoneNumberLength < 7){
+          return `(${phoneNumber.slice(0,3)}) ${phoneNumber.slice(3)}`;
+        }
+        return `(${phoneNumber.slice(0,3)}) ${phoneNumber.slice(3,6)}-${phoneNumber.slice(6,9)}`;
+      }
+
+      function phoneNumberFormatter(e){
+        const inputField= e.target;
+        const formattedInputValue = formatPhoneNumber(inputField.value);
+        inputField.value=formattedInputValue;
       }
   
     return (
@@ -178,12 +196,14 @@ export function UpdateCompanyDetails() {
 
             <div className="form-group">
               <label htmlFor="phone">Sirket Telefon Numarasi</label>
-              <input
+              <input onKeyDown={phoneNumberFormatter}
                 type="tel"
                 name="phone"
                 id="phone"
-                placeholder="Telefon Numarasi"
+                placeholder="(xxx)-xxx-xxxx"
                 onChange={handleChange}
+                required
+                pattern="^\(\d{3}\) \d{3}-\d{4}$"
                 value={companyDetailsData.phone}
               />
             </div>
@@ -227,7 +247,7 @@ export function UpdateCompanyDetails() {
             <button type="submit" style={{height:"30px"}}>Guncelle</button>
           </form>
         )}
-        {notificationStatus && <p>Guncelleme Basarili</p>}
+        {notificationStatus && <p style={{ color: "green", marginTop: "10px" }}>Guncelleme Basarili</p>}
         {error !== null && (
           <p style={{ color: "red", marginTop: "10px" }}>{error}</p>
         )}
