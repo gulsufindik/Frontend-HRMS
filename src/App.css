@@ -999,3 +999,69 @@ margin-bottom: 5px;
   outline: 0;
 }
 
+/*===================Comapny Page==========================*/
+
+.companyPageHeader{
+  border: 4px solid yellow;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.companyPageMain{
+  display: flex;
+}
+
+.companyİnfosecction{
+  border: 1px solid gold;
+  width: 50vw;
+  height: 85vh;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  padding-left: 50px;
+  padding-right: 50px;
+ 
+  background-color: pink;
+}
+
+.companyCommentsecction{
+  border: 1px solid gold;
+  width: 50vw;
+  height: 85vh;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 50px;
+  background-color: peru;
+}
+
+.contentCompany{
+  color: red;
+  font-size: 20px;
+}
+.contentCompanyTitle{
+  margin-top: 30px;
+}
+
+.comment{
+ 
+  
+  width: 500px;
+  min-height: 30px;
+  height: auto;
+  margin:10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+  
+  
+
+}
