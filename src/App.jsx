@@ -36,6 +36,7 @@ import { ProtectedRoute } from "./Pages/MainPages/ProtectedRoute";
 import { ManagerPendingExpenses } from "./Pages/MainPages/ManagerPendingExpenseRequests";
 import { PersonalPageUpdatePersonalInfo } from "./Pages/MainPages/PersonalPageUpdatePersonalInfo";
 import { PersonelPageCreateAdvancePaymentRequest } from "./Pages/MainPages/PersonelCreateAdvancePaymentRequest";
+import { ManagerPendingAdvances } from "./Pages/MainPages/ManagerPendingAdvanceRequests";
 
 function App() {
 
@@ -62,6 +63,7 @@ function App() {
           <Route path="managerregisteremployee" element={<ManagerRegisterEmployee />}></Route>
           <Route path="managerdeleteemployee" element={<ManagerDeleteEmployee />}></Route>
           <Route path="managerpendingexpenserequests" element={<ManagerPendingExpenses />}></Route>
+          <Route path="managerpendingadvancerequest" element={<ManagerPendingAdvances />}></Route>
         </Route>
 
         {/* personel ve manager'in ulasabilecegi sayfalar */}
