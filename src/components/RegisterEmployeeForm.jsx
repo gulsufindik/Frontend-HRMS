@@ -44,12 +44,13 @@ export function RegisterEmployeeFrm() {
     e.preventDefault();
     registerEmployeeMethod(employeeData)
       .then((data) => {
-        if (data) {
+        if (data.successMessage) {
           setNotificationStatus(true);
         }
 
         if (data.fields) {
-          setError(data.fields[0]);
+          let newError= data.fields[0].split(":")
+          setError(newError[1]);
         } else {
           setError(data.message);
         }

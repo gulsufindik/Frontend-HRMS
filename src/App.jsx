@@ -35,6 +35,7 @@ import { PersonelPageCreateExpenseRequest } from "./Pages/MainPages/PersonelCrea
 import { ProtectedRoute } from "./Pages/MainPages/ProtectedRoute";
 import { ManagerPendingExpenses } from "./Pages/MainPages/ManagerPendingExpenseRequests";
 import { PersonalPageUpdatePersonalInfo } from "./Pages/MainPages/PersonalPageUpdatePersonalInfo";
+import { PersonelPageCreateAdvancePaymentRequest } from "./Pages/MainPages/PersonelCreateAdvancePaymentRequest";
 
 function App() {
 
@@ -74,6 +75,7 @@ function App() {
           <Route path="personelleaveacomment" element={<EmployeeCommentToCompany />} ></Route>
           <Route path="employeerequestdayoff" element={<PersonelPageCreateDayOffRequest />}></Route>
           <Route path="employeeexpenserequest" element={<PersonelPageCreateExpenseRequest />}></Route>
+          <Route path="employeeadvancepaymentrequest" element={<PersonelPageCreateAdvancePaymentRequest />}></Route>
         </Route>
 
 

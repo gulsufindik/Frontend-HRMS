@@ -180,6 +180,7 @@ export function UpdatePersonalDetails() {
                             placeholder="Maas"
                             onChange={handleChange}
                             value={personalDetailsData.salary}
+                            readOnly={localStorage.getItem("userType") !== "MANAGER"}
                         />
                     </div>
 
