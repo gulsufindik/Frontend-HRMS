@@ -114,8 +114,7 @@ function Table() {
             <table className="tablo" border="1">
                 <thead>
                     <tr className="tableROW">
-                        <th>ID</th>
-                        <th>AuthId</th>
+                      
                         <th>İsim Soyisim</th>
                         <th>Kullanıcı Adı</th>
                         <th>Personel Maili</th>
@@ -128,8 +127,7 @@ function Table() {
                 <tbody>
                     {personalData.map((obj) => (
                         <tr className="tableROW" key={obj.id}>
-                            <td className="td">{obj.id}</td>
-                            <td className="td">{obj.authid}</td>
+                           
                             <td className="td">{obj.name} {obj.surname}</td>
                             <td className="td">{obj.username}</td>
                             <td className="td">{obj.personalEmail}</td>

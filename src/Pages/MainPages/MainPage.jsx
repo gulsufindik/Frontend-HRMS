@@ -154,6 +154,7 @@ function FindAllCompany() {
 function FindWithName() {
   const [companyName, setCompanyName] = useState("");
   const [databaseData, setDatabaseData] = useState([]);
+  const [error, setError] = useState(null);
 
   const handleQueryClick = () => {
     if (companyName) {
@@ -161,11 +162,15 @@ function FindWithName() {
         .then((data) => {
           setDatabaseData(data);
         })
-        .catch((err) => console.log("Hata:", err.message));
+        .catch((err) => {
+        setError(err.message);
+        setDatabaseData(err);
+        console.log("Hata:", err.message);
+        });
     }
   };
 
-
+  
 
   return (
     <div className="findCompany">
@@ -179,14 +184,21 @@ function FindWithName() {
       <button className="findCompanybtn1"></button>
       <button className="findCompanybtn2" onClick={() => handleQueryClick(companyName)}>ARA</button>
       <button className="findCompanybtn3"></button>
-      {databaseData.companyName && (
-        <div className="databaseCompany">
-          <h1>{databaseData.companyName}</h1>
-          <p>{databaseData.about}</p>
-          <NavLink to="/visitor/companypage"> <button className="goCompany">Şirkete Git</button></NavLink>
-          {localStorage.setItem("gotoCompanyId", databaseData.id.toString())}
-        </div>
-      )}
+      {databaseData.companyName ? (
+  <div className="databaseCompany">
+    <h1>{databaseData.companyName}</h1>
+    <p>{databaseData.about}</p>
+    <NavLink to="/visitor/companypage">
+      <button className="goCompany">Şirkete Git</button>
+    </NavLink>
+    {localStorage.setItem("gotoCompanyId", databaseData.id.toString())}
+  </div>
+) : (
+  error && (
+    <div className="erorMainPage">Sonuç Yok</div>
+  )
+)}
+
 
 
     </div>
