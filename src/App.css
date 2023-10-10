@@ -686,7 +686,6 @@ margin-bottom: 5px;
 /*=====main page=====================*/
 
 .mainPageContainer >header{
-  border: 2px solid pink;
   height: 13vh;
   min-height: 100px;
   display: flex;
@@ -859,7 +858,7 @@ margin-bottom: 5px;
   background-color: orangered;
   transition: width 0.5s ease-in-out, height 0.5s ease-in-out, background-color 0.5s ease-in-out;
   width: 90%;
-  
+  text-decoration: none;
   font-weight: bold;
 }
 
@@ -1002,7 +1001,7 @@ margin-bottom: 5px;
 /*===================Comapny Page==========================*/
 
 .companyPageHeader{
-  border: 4px solid yellow;
+ 
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1015,7 +1014,7 @@ margin-bottom: 5px;
 }
 
 .companyİnfosecction{
-  border: 1px solid gold;
+
   width: 50vw;
   height: 85vh;
   display: flex;
@@ -1028,7 +1027,7 @@ margin-bottom: 5px;
 }
 
 .companyCommentsecction{
-  border: 1px solid gold;
+
   width: 50vw;
   height: 85vh;
   display: flex;
@@ -1043,13 +1042,16 @@ margin-bottom: 5px;
 .contentCompany{
   color: red;
   font-size: 20px;
+  border: 1px solid red;
+  background-color: #ddd;
+  border-radius: 30px;
+  padding: 10px;
 }
 .contentCompanyTitle{
   margin-top: 30px;
 }
 
 .comment{
- 
   
   width: 500px;
   min-height: 30px;
@@ -1064,4 +1066,17 @@ margin-bottom: 5px;
   
   
 
+}
+/*=====mainPage Bug========*/
+
+.erorMainPage{
+  margin-top: 50px;
+  border: 5px solid var(--clr-primary);
+  border-radius: 30px;
+  border-style: dotted;
+  padding: 15px;
+  font-style: italic;
+  color: white;
+  font-size: 50px;
+  background-color: #1483ab;
 }
