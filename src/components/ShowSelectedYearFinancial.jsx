@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 
 function fetchSelectedYearFinancialPerformanceMethod(selectedYearData) {
-  return fetch(
-    `http://localhost:8080/financialperformance/findSelectedYear?companyName=${selectedYearData.companyName}&selectedYear=${selectedYearData.selectedYear}`
-  )
-    .then((resp) => resp.json())
+  const url=`http://localhost:8080/financialperformance/findSelectedYear?companyName=${selectedYearData.companyName}&selectedYear=${selectedYearData.selectedYear}`
+  const urlCloud=`http://34.155.184.89/financialperformance/findSelectedYear?companyName=${selectedYearData.companyName}&selectedYear=${selectedYearData.selectedYear}`
+  return fetch(url).then((resp) => resp.json())
     .then((data) => data)
     .catch((err) => console.log(err.message));
 }

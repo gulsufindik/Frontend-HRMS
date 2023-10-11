@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 function CompanyContactApiMethod() {
   const url = `http://localhost:8080/company/findbyid2?id=${localStorage.getItem("gotoCompanyId")}`;
+  const urlCloud = `http://34.155.184.89/company/findbyid2?id=${localStorage.getItem("gotoCompanyId")}`;
 
   return fetch(url)
     .then((resp) => {

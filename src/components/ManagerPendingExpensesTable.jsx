@@ -5,6 +5,11 @@ const pendingExpenseRequestUrl= `http://localhost:8080/expense/findexpensebycomp
 const approveExpenseRequestUrl= "http://localhost:8080/expense/approveStatus"
 const denyExpenseRequestUrl = "http://localhost:8080/expense/denyStatus"
 
+// ========= URL CLOUD ==========
+const pendingExpenseRequestUrlCloud= `http://34.155.184.89/expense/findexpensebycompany?companyName=${localStorage.getItem("companyName")}`
+const approveExpenseRequestUrlCloud= "http://34.155.184.89/expense/approveStatus"
+const denyExpenseRequestUrlCloud = "http://34.155.184.89/expense/denyStatus"
+
 // ========= BACKEND METODLARI =========
 // ====LISTELEME===
 function pendingExpenseRequestMethod(){

@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react"
 
 function fetchPersonalTable() {
-    return fetch(`http://localhost:8080/user/listworkers?companyName=${localStorage.getItem("companyName")}`)
+    const url=`http://localhost:8080/user/listworkers?companyName=${localStorage.getItem("companyName")}`
+    const urlCloud=`http://34.155.184.89/user/listworkers?companyName=${localStorage.getItem("companyName")}`
+    return fetch(url)
         .then((resp) => {
             return resp.json();
         })
@@ -44,24 +46,24 @@ export function AllPersonalTable() {
                 <table className="employeeTable" >
                     <thead>
                         <tr>
-                            
+                            <th>ID</th>
                             <th>İsim Soyisim</th>
                             <th>Kullanıcı Adı</th>
                             <th>Personel Maili</th>
                             <th>Şirket Maili</th>
-                            <th>Çalısan Tipi</th>
+                            <th>Çalışan Tipi</th>
                             <th>Şirket İsmi</th>
                         </tr>
                     </thead>
                     <tbody>
                         {listAllYears.length === 0 ? (
                             <tr>
-                                <td colSpan="6">Henuz veri yukleniyor...</td>
+                                <td colSpan="7">Henüz veri yükleniyor...</td>
                             </tr>
                         ) : (
-                            listAllYears.map(item => (
+                            listAllYears.map((item, index) => (
                                 <tr key={item.id}>
-                                   
+                                    <td>{index + 1}</td>
                                     <td>{item.name} {item.surname}</td>
                                     <td>{item.username}</td>
                                     <td>{item.personalEmail}</td>

@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react"
 
 function fetchCompanyExpenses() {
-    return fetch(`http://localhost:8080/upcoming/findallwithcompanyname?companyName=${localStorage.getItem("companyName")}`)
+    const url=`http://localhost:8080/upcoming/findallwithcompanyname?companyName=${localStorage.getItem("companyName")}`
+    const urlCloud=`http://34.155.184.89/upcoming/findallwithcompanyname?companyName=${localStorage.getItem("companyName")}`
+
+    return fetch(url)
         .then((resp) => {
             return resp.json();
         })

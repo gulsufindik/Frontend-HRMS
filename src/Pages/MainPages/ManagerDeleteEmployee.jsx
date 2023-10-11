@@ -6,6 +6,7 @@ import { SwitchButtonToEmployee } from "../../components/SwitchManagerToEmployee
 
 function ListWorkersMethod() {
     const url = `http://localhost:8080/user/listworkerswithoutmanager?companyName=${localStorage.getItem("companyName")}`;
+    const urlCloud = `http://34.155.184.89/user/listworkerswithoutmanager?companyName=${localStorage.getItem("companyName")}`;
     const options = {
         method: "GET",
         headers: { "Content-Type": "application/json" },
