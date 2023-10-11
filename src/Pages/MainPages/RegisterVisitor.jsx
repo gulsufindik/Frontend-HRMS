@@ -1,7 +1,6 @@
 import { LogoLogin } from "../../components/LogoLogin";
 import { GirisYap } from "../../components/GirisYap";
 import { NavLink } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 // ===================Metodlar========================
