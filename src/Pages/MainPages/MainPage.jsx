@@ -6,6 +6,7 @@ import { Logout } from "../../components/LogoutButton";
 
 function GetAllCompany() {
   const url = `http://localhost:8080/company/findall2`;
+  const urlCloud = `http://34.155.184.89/company/findall2`;
   const options = {
     method: "GET",
     headers: { "Content-Type": "application/json" },

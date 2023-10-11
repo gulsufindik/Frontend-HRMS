@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 // ========== URL =============
 const contactInformationUrl= `http://localhost:8080/company/contactinformation?companyName=${localStorage.getItem("companyName")}`
+const contactInformationUrlCloud= `http://34.155.184.89/company/contactinformation?companyName=${localStorage.getItem("companyName")}`
 
 // ========== BACKEND ===========
 

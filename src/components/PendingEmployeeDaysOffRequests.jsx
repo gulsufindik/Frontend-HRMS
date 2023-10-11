@@ -4,6 +4,13 @@ import { useEffect, useState } from "react";
 const pendingDayOffRequesUrl= `http://localhost:8080/permission/finddayoffbycompany?companyName=${localStorage.getItem("companyName")}`
 const approveDayOffRequestUrl = "http://localhost:8080/permission/approveStatus"
 const denyDayOffRequestManagerUrl = "http://localhost:8080/permission/denyStatus"
+
+//==================== URL CLOUD ===============================
+const pendingDayOffRequesUrlCloud= `http://34.155.184.89/permission/finddayoffbycompany?companyName=${localStorage.getItem("companyName")}`
+const approveDayOffRequestUrlCloud = "http://34.155.184.89/permission/approveStatus"
+const denyDayOffRequestManagerUrlCloud = "http://34.155.184.89/permission/denyStatus"
+
+
 //==================== Backend Fetch ===============================
 // =========== listeleme metodu ==============
 function pendingApprovalDayOffRequestMethod(){

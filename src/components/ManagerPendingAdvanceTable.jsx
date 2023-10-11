@@ -5,6 +5,11 @@ const pendingAdvanceRequestUrl= `http://localhost:8080/advancepayment/listsadvan
 const approveAdvanceRequestUrl= "http://localhost:8080/advancepayment/approveadvancerequest"
 const denyAdvanceRequestUrl = "http://localhost:8080/advancepayment/denyadvancerequest"
 
+// ========= URL CLOUD ==========
+const pendingAdvanceRequestUrlCloud= `http://34.155.184.89/advancepayment/listsadvancepaymentrequests?companyName=${localStorage.getItem("companyName")}`
+const approveAdvanceRequestUrlCloud= "http://34.155.184.89/advancepayment/approveadvancerequest"
+const denyAdvanceRequestUrlCloud = "http://34.155.184.89/advancepayment/denyadvancerequest"
+
 // ========= BACKEND METODLARI =========
 // ====LISTELEME===
 function pendingAdvanceRequestMethod(){

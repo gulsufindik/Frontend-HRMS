@@ -2,6 +2,7 @@ import { useState } from "react";
 
 // URL
 const advancePaymentRequestUrl="http://localhost:8080/advancepayment/save"
+const advancePaymentRequestUrlCloud="http://34.155.184.89/advancepayment/save"
 
 // Backend Baglantisi
 function createAdvancePaymentRequestMethod(advancePaymentRequestData){

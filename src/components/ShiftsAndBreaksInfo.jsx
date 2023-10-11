@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 const employeeInfoUrl = `http://localhost:8080/shiftsandbreaks/shiftinfo?companyName=${localStorage.getItem("companyName")}`
+const employeeInfoUrlCloud = `http://34.155.184.89/shiftsandbreaks/shiftinfo?companyName=${localStorage.getItem("companyName")}`
 
 console.log(localStorage.getItem("companyName"))
 function fetchShiftsAndBreaksInfo() {
