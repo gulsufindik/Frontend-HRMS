@@ -2,6 +2,7 @@ import { useState } from "react";
 
 //  URL
 const createExpenseRequestUrl= "http://localhost:8080/expense/save"
+const createExpenseRequestUrlCloud= "http://34.155.184.89/expense/save"
 
 // Backend Baglantisi
 

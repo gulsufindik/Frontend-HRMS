@@ -3,6 +3,7 @@ import { useState } from "react";
 // URL
 
 const registerEmployeeUrl = "http://localhost:8080/auth/registeremployee";
+const registerEmployeeUrlCloud = "http://34.155.184.89/auth/registeremployee";
 
 // Backend Baglantisi
 

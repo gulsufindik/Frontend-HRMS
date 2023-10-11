@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
 
 const updateCompanyDetailsUrl = "http://localhost:8080/company/update";
+const updateCompanyDetailsUrlCloud = "http://34.155.184.89/company/update";
 const findByCompanyNameUrl = `http://localhost:8080/company/findbycompanyname?companyName=${localStorage.getItem(
+  "companyName"
+)}`;
+const findByCompanyNameUrlCloud = `http://34.155.184.89/company/findbycompanyname?companyName=${localStorage.getItem(
   "companyName"
 )}`;
 

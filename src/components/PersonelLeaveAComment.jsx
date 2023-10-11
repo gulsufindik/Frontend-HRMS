@@ -2,6 +2,7 @@ import { useState } from "react";
 
 // URL
 const leaveACommentUrl = "http://localhost:8080/comment/save";
+const leaveACommentUrlCloud = "http://34.155.184.89/comment/save";
 
 // backend baglantisi
 function leaveACommentMethod(commentData) {
