@@ -608,9 +608,7 @@ margin-bottom: 5px;
   background-color: green;
 }
 
-.companentContainer{
-  display: flex;
-}
+
 .inputContainer{
   display: flex;
   flex-direction: column;
@@ -1079,4 +1077,11 @@ margin-bottom: 5px;
   color: white;
   font-size: 50px;
   background-color: #1483ab;
+}
+
+/*==============Upcoming Page Bug===========*/
+.hata{
+  margin-top: 50px;
+  text-align: center;
+  justify-content: center;
 }
