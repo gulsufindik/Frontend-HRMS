@@ -4,7 +4,7 @@ import { useState } from "react";
 
 // ===================Metodlar========================
 const forgotPasswordUrl="http://localhost:8080/auth/forgotpassword"
-const forgotPasswordUrlCloud="http://34.155.184.89/auth/forgotpassword"
+const forgotPasswordUrlCloud="http://34.123.15.45/auth/forgotpassword"
 
 // ==========Backend baglanti ============
 function forgotPasswordMethod(forgotPasswordInput){

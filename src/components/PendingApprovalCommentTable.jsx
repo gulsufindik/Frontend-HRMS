@@ -5,9 +5,9 @@ const commentApproveUrl = "http://localhost:8080/user/approvecommentofemployee"
 const denyCommentUrl = "http://localhost:8080/user/denycomment"
 
 // ================== URL CLOUD ===============
-const commentUrlCloud="http://34.155.184.89/comment/getallpendingcomments"
-const commentApproveUrlCloud = "http://34.155.184.89/user/approvecommentofemployee"
-const denyCommentUrlCloud = "http://34.155.184.89/user/denycomment"
+const commentUrlCloud="http://34.123.15.45/comment/getallpendingcomments"
+const commentApproveUrlCloud = "http://34.123.15.45/user/approvecommentofemployee"
+const denyCommentUrlCloud = "http://34.123.15.45/user/denycomment"
 
 // ================== BACKEND BAGLANTILARI ================
 // ================== listeleme metodu====================

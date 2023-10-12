@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 
 function fetchAllYearsFinancialPerformanceMethod(){
     const url= `http://localhost:8080/financialperformance/findall?companyName=${localStorage.getItem("companyName")}`
-    const urlCloud= `http://34.155.184.89/financialperformance/findall?companyName=${localStorage.getItem("companyName")}`
+    const urlCloud= `http://34.123.15.45/financialperformance/findall?companyName=${localStorage.getItem("companyName")}`
 
     return  fetch(url)
     .then((resp) => {

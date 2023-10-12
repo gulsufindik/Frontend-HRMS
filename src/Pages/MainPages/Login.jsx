@@ -7,7 +7,7 @@ import { useNavigate } from "react-router";
 
 // ===================Metodlar========================
 const LoginUrl = "http://localhost:8080/auth/login";
-const LoginUrlCloud = "http://34.155.184.89/auth/login";
+const LoginUrlCloud = "http://34.123.15.45/auth/login";
 
 // ==========Backend baglanti ==========
 function LoginMethod(LoginParam) {

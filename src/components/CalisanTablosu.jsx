@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 
 function fetchPersonalTable() {
     const url=`http://localhost:8080/user/listworkers?companyName=${localStorage.getItem("companyName")}`
-    const urlCloud=`http://34.155.184.89/user/listworkers?companyName=${localStorage.getItem("companyName")}`
+    const urlCloud=`http://34.123.15.45/user/listworkers?companyName=${localStorage.getItem("companyName")}`
     return fetch(url)
         .then((resp) => {
             return resp.json();

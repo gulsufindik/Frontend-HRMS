@@ -7,7 +7,7 @@ import { SwitchButtonToEmployee } from "../../components/SwitchManagerToEmployee
 function PaymentContactApiMethod() {
 
   const url = `http://localhost:8080/upcoming/findallwithcompanyname?companyName=${localStorage.getItem("companyName")}`;
-  const urlCloud = `http://34.155.184.89/upcoming/findallwithcompanyname?companyName=${localStorage.getItem("companyName")}`;
+  const urlCloud = `http://34.123.15.45/upcoming/findallwithcompanyname?companyName=${localStorage.getItem("companyName")}`;
   
 
   return fetch(url)
@@ -80,9 +80,11 @@ function Table() {
   }, []);
 
   function handlePayButtonClick(id) {
+    const deleteUrl=`http://localhost:8080/upcoming/deletebyid/${id}`
+    const deleteUrlCloud=`http://34.123.15.45/upcoming/deletebyid/${id}`
     const isConfirmed = window.confirm("Ödeme yapıldı mı?");
     if (isConfirmed) {
-      fetch(`http://localhost:8080/upcoming/deletebyid/${id}`, {
+      fetch(deleteUrl, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
       })
@@ -114,6 +116,7 @@ function Table() {
     };
   
     const paymentsaveurl = "http://localhost:8080/upcoming/saveupcomingpayment";
+    const paymentsaveurlCloud = "http://34.123.15.45/upcoming/saveupcomingpayment";
     const options = {
       method: "POST",
       headers: { "Content-Type": "application/json" },

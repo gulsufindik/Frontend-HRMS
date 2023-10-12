@@ -6,9 +6,9 @@ const pendingApprovalManagerUrl = "http://localhost:8080/user/approvemanager"
 const denyRegisterManagerUrl = "http://localhost:8080/user/denymanager"
 
 //==================== URL CLOUD ===============================
-const pendingApprovalListManagerUrlCloud= "http://34.155.184.89/user/listpendingmanagerapproval"
-const pendingApprovalManagerUrlCloud = "http://34.155.184.89/user/approvemanager"
-const denyRegisterManagerUrlCloud = "http://34.155.184.89/user/denymanager"
+const pendingApprovalListManagerUrlCloud= "http://34.123.15.45/user/listpendingmanagerapproval"
+const pendingApprovalManagerUrlCloud = "http://34.123.15.45/user/approvemanager"
+const denyRegisterManagerUrlCloud = "http://34.123.15.45/user/denymanager"
 
 //==================== Backend Fetch ===============================
 // =========== listeleme metodu ==============

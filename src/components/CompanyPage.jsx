@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 function CompanyContactApiMethod() {
   const url = `http://localhost:8080/company/findbyid2?id=${localStorage.getItem("gotoCompanyId")}`;
-  const urlCloud = `http://34.155.184.89/company/findbyid2?id=${localStorage.getItem("gotoCompanyId")}`;
+  const urlCloud = `http://34.123.15.45/company/findbyid2?id=${localStorage.getItem("gotoCompanyId")}`;
 
   return fetch(url)
     .then((resp) => {
@@ -23,6 +23,7 @@ function CompanyContactApiMethod() {
 
 function CommentContactApiMethod(companyName) {
     const url = `http://localhost:8080/comment/findbycompanyname?companyName=${companyName}`;
+    const urlCloud = `http://34.123.15.45/comment/findbycompanyname?companyName=${companyName}`;
   
     return fetch(url)
       .then((resp) => {

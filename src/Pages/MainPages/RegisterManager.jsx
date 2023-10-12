@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 
 // ===================Metodlar========================
 const registerManagerUrl = "http://localhost:8080/auth/registermanager";
-const registerManagerUrlCloud = "http://34.155.184.89/auth/registermanager";
+const registerManagerUrlCloud = "http://34.123.15.45/auth/registermanager";
 
 // ==========Backend baglanti ==========
 function registerManagerMethod(managerForm) {
