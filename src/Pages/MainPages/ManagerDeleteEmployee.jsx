@@ -80,10 +80,12 @@ function Table() {
     }, []);
 
     function handlePayButtonClick(authid) {
+        const url = `http://localhost:8080/user/deletebyauthid/${authid}`
+        const urlCloud = `http://34.123.15.45/user/deletebyauthid/${authid}`
         const isConfirmed = window.confirm("Emin misiniz?")
         if (isConfirmed) {
             // Veritabanından öğeyi silmek için API isteği yap
-            fetch(`http://localhost:8080/user/deletebyauthid/${authid}`, {
+            fetch(url, {
                 method: "DELETE",
                 headers: { "Content-Type": "application/json" },
             })

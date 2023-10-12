@@ -15,7 +15,7 @@ function registerVisitorMethod(visitorForm){
     headers: {"Content-Type":"application/json"},
     body:JSON.stringify(visitorForm),
 }
-  return fetch (registerVisitorUrlCloud,options).then((resp)=>{
+  return fetch (registerVisitorUrl,options).then((resp)=>{
     return resp.json();
   }).then((data)=>{return data}).catch((err)=>console.log(err.message));
 }
