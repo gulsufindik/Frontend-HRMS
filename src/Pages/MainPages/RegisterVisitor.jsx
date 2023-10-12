@@ -5,7 +5,7 @@ import { useState } from "react";
 
 // ===================Metodlar========================
 const registerVisitorUrl="http://localhost:8080/auth/registervisitor"
-const registerVisitorUrlCloud="http://34.155.184.89/auth/registervisitor"
+const registerVisitorUrlCloud="http://34.123.15.45/auth/registervisitor"
 
 // ==========Backend baglanti ============
 function registerVisitorMethod(visitorForm){

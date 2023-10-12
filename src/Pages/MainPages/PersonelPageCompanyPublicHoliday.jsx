@@ -6,7 +6,7 @@ import { SwitchButtonToManager } from "../../components/SwitchEmployeeToManagerB
 
 
 const ManagerPagePublicHolidayUrl = "http://localhost:8080/company/publicholiday";
-const ManagerPagePublicHolidayUrlCloud = "http://34.155.184.89/company/publicholiday";
+const ManagerPagePublicHolidayUrlCloud = "http://34.123.15.45/company/publicholiday";
 
 function publicHolidayData() {
   return fetch(ManagerPagePublicHolidayUrl)

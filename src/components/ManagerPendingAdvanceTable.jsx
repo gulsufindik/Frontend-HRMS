@@ -6,9 +6,9 @@ const approveAdvanceRequestUrl= "http://localhost:8080/advancepayment/approveadv
 const denyAdvanceRequestUrl = "http://localhost:8080/advancepayment/denyadvancerequest"
 
 // ========= URL CLOUD ==========
-const pendingAdvanceRequestUrlCloud= `http://34.155.184.89/advancepayment/listsadvancepaymentrequests?companyName=${localStorage.getItem("companyName")}`
-const approveAdvanceRequestUrlCloud= "http://34.155.184.89/advancepayment/approveadvancerequest"
-const denyAdvanceRequestUrlCloud = "http://34.155.184.89/advancepayment/denyadvancerequest"
+const pendingAdvanceRequestUrlCloud= `http://34.123.15.45/advancepayment/listsadvancepaymentrequests?companyName=${localStorage.getItem("companyName")}`
+const approveAdvanceRequestUrlCloud= "http://34.123.15.45/advancepayment/approveadvancerequest"
+const denyAdvanceRequestUrlCloud = "http://34.123.15.45/advancepayment/denyadvancerequest"
 
 // ========= BACKEND METODLARI =========
 // ====LISTELEME===

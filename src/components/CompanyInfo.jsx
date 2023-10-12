@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 const employeeInfoUrl = `http://localhost:8080/company/findbycompanyname?companyName=${localStorage.getItem("companyName")}`
-const employeeInfoUrlCloud = `http://34.155.184.89/company/findbycompanyname?companyName=${localStorage.getItem("companyName")}`
+const employeeInfoUrlCloud = `http://34.123.15.45/company/findbycompanyname?companyName=${localStorage.getItem("companyName")}`
 
 console.log(localStorage.getItem("companyName"))
 function fetchCompanyInfo() {

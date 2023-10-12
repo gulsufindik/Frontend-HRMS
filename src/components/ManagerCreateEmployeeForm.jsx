@@ -2,7 +2,7 @@ import { useState } from "react";
 // Backend URL
 
 const createDayOffUrl = "http://localhost:8080/permission/save";
-const createDayOffUrlCloud = "http://34.155.184.89/permission/save";
+const createDayOffUrlCloud = "http://34.123.15.45/permission/save";
 
 // Backend baglanti
 

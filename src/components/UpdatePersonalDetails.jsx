@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 
 const updatePersonalDetailsUrl = "http://localhost:8080/user/update";
-const updatePersonalDetailsUrlCloud = "http://34.155.184.89/user/update";
+const updatePersonalDetailsUrlCloud = "http://34.123.15.45/user/update";
 const findUserByTokenUrl = `http://localhost:8080/user/employeeinfo?token=${localStorage.getItem(
     "token"
 )}`;
-const findUserByTokenUrlCloud = `http://34.155.184.89/user/employeeinfo?token=${localStorage.getItem(
+const findUserByTokenUrlCloud = `http://34.123.15.45/user/employeeinfo?token=${localStorage.getItem(
     "token"
 )}`;
 

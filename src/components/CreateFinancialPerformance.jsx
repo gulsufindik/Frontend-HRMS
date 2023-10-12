@@ -2,7 +2,7 @@ import { useState } from "react";
 
 // ===================Metodlar========================
 const createFinancialUrl = "http://localhost:8080/financialperformance/save";
-const createFinancialUrlCloud = "http://34.155.184.89/financialperformance/save";
+const createFinancialUrlCloud = "http://34.123.15.45/financialperformance/save";
 
 
 // ==========Backend baglanti ==========
