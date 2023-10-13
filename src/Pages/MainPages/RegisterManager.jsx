@@ -36,6 +36,7 @@ export function RegisterManager() {
         </nav>
       </header>
       <main style={{backgroundColor:"rgb(239, 230, 232)"}}>
+      <NavLink to="/managerpackageselect"><p >🔙 Paket Secimine Geri don</p></NavLink>
         <div>
           <RegisterManagerFrm registerManagerMethod={registerManagerMethod} />
         </div>
@@ -57,6 +58,8 @@ function RegisterManagerFrm({ registerManagerMethod }) {
     personalEmail: "",
     taxNo: "",
     companyName: "",
+    userType: sessionStorage.getItem("userType"),
+    packageType: sessionStorage.getItem("selectedPack")
   });
   const [notificationStatus, setNotificationStatus] = useState(false);
   const [error,setError] = useState(null)

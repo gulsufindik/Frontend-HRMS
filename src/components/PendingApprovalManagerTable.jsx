@@ -53,6 +53,8 @@ export function PendingApprovalManagerTable(){
     const[approvedManager,setApprovedManager]= useState({
         token:localStorage.getItem("token"),
         managerAuthId: null,
+        companyName: "",
+        userType : localStorage.getItem("userType")
     })
     const[approveError,setApproveError]=useState(null);
     const [approvedMessage,setApprovedMessage] = useState(null);
@@ -61,6 +63,7 @@ export function PendingApprovalManagerTable(){
     const[deniedManager,setDeniedManager] = useState({
         userType: localStorage.getItem("userType"),
         authId: null,
+        companyName: ""
     })
 
     // Listeyi Yenileme Icin Gerekli Metod
@@ -83,12 +86,12 @@ export function PendingApprovalManagerTable(){
                 }
             }
         }).catch((err)=>console.log(err.message))
-    },[pendingManagerList])
+    },[])
 
     // Onaylama Metodu
-    function handleApproveClick(AuthIdOfManager){
+    function handleApproveClick(AuthIdOfManager, nameOfCompany){
         console.log(AuthIdOfManager);
-        setApprovedManager({ token: localStorage.getItem("token"), managerAuthId: AuthIdOfManager });
+        setApprovedManager({ token: localStorage.getItem("token"), managerAuthId: AuthIdOfManager , companyName: nameOfCompany,userType:localStorage.getItem("userType") });
         removeManagerFromList(AuthIdOfManager)
     }
     
@@ -112,9 +115,9 @@ export function PendingApprovalManagerTable(){
     }, [approvedManager]);
 
     // Red Metodu
-    function handleDenyClick(AuthIdOfManager){
+    function handleDenyClick(AuthIdOfManager, nameOfCompany){
         console.log(AuthIdOfManager);
-        setDeniedManager({ userType: localStorage.getItem("userType"), authId: AuthIdOfManager });
+        setDeniedManager({ userType: localStorage.getItem("userType"), authId: AuthIdOfManager, companyName: nameOfCompany });
         removeManagerFromList(AuthIdOfManager)
     }
 
@@ -171,7 +174,7 @@ export function PendingApprovalManagerTable(){
                                 <td>{manager.personalEmail}</td>
                                 <td>{manager.companyName}</td>
                                 <td>{manager.userType}</td>
-                                <td><button className="btn-approve" onClick={()=>handleApproveClick(manager.authid)}>✔️</button><button onClick={()=>handleDenyClick(manager.authid)} className="btn-deny" >🗙</button></td>
+                                <td><button className="btn-approve" onClick={()=>handleApproveClick(manager.authid, manager.companyName)}>✔️</button><button onClick={()=>handleDenyClick(manager.authid, manager.companyName)} className="btn-deny" >🗙</button></td>
                             </tr>
                         ))
                     )}

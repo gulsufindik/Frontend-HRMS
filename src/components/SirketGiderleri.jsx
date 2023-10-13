@@ -53,7 +53,7 @@ export function CompanyExpensesTable() {
                             <th>Odeme Miktari</th>
                             <th>Odeme Tarihi</th>
                             <th>Durum</th>
-                            <th>Odeme Tipi</th>
+                            {/* <th>Odeme Tipi</th> */}
                         </tr>
                     </thead>
                     <tbody>
@@ -69,7 +69,7 @@ export function CompanyExpensesTable() {
                                     <td>{item.paymentAmount}</td>
                                     <td>{item.paymentDate}</td>
                                     <td>{item.status}</td>
-                                    <td>{item.type}</td>
+                                    {/* <td>{item.type}</td> */}
                                 </tr>
                             ))
                         )}
