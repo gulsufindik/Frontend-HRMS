@@ -65,10 +65,11 @@ export function CompanyPage() {
   useEffect(() => {
     CommentContactApiMethod(localStorage.getItem("findcommentcompany"))
       .then((data) => {
-        console.log(data);
-        console.log("levent")
-        console.log("veri geldi");
-         setCommentData(data);
+        if (Array.isArray(data)) {
+          setCommentData(data);
+        } else {
+          setCommentData([]);
+        }
       })
       .catch((err) => {
         setError(err.message);

@@ -79,6 +79,10 @@ function RegisterVisitorFrm({registerVisitorMethod}){
     }).catch((err)=>console.log(err.message))
   }
 
+  function handleClick(){
+    sessionStorage.setItem("userType","MANAGER")
+  }
+
   return(
     <>
            {!notificationStatus && <form onSubmit={handleRegisterVisitorSubmit}>
@@ -130,7 +134,7 @@ function RegisterVisitorFrm({registerVisitorMethod}){
             value={visitorForm.password}
           />
           <section>
-          <NavLink to="/registerManager"><p>Yonetici kaydi </p></NavLink>
+          <NavLink to={ sessionStorage.getItem("selectedPack") !== null ? "/registerManager" : "/managerpackageselect"}><p onClick={handleClick} >Yonetici kaydi </p></NavLink>
           {/* <NavLink to="resetPw"><p>Sifremi unuttum</p></NavLink> */}
           </section>
           <button type="submit">Kayit Ol</button>

@@ -37,6 +37,7 @@ import { ManagerPendingExpenses } from "./Pages/MainPages/ManagerPendingExpenseR
 import { PersonalPageUpdatePersonalInfo } from "./Pages/MainPages/PersonalPageUpdatePersonalInfo";
 import { PersonelPageCreateAdvancePaymentRequest } from "./Pages/MainPages/PersonelCreateAdvancePaymentRequest";
 import { ManagerPendingAdvances } from "./Pages/MainPages/ManagerPendingAdvanceRequests";
+import { PackagePageGeneral } from "./components/PackagePage";
 
 function App() {
 
@@ -49,6 +50,7 @@ function App() {
         <Route path="/registerVisitor" element={<RegisterVisitor />}></Route>
         <Route path="/registerManager" element={<RegisterManager />}></Route>
         <Route path="/forgotpassword" element={<ForgotPassword />}></Route>
+        <Route path="/managerpackageselect" element={<PackagePageGeneral />}></Route>
 
         {/* sadece managerin ulasabilecegi sayfalar */}
 
